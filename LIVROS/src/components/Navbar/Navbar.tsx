@@ -1,5 +1,6 @@
 import React from 'react';
 import './Navbar.css';
+import 'tailwindcss'
 
 const Navbar: React.FC = () => {
     return (
@@ -46,15 +47,18 @@ const Navbar: React.FC = () => {
 
                 <ul className="navbar-links">
                     <li>
-                        <a href="#home" className="nav-link active">Home</a>
+                        <a href="/" className="nav-link active">Home</a>
                     </li>
                     <li>
-                        <a href="#sobre" className="nav-link">Sobre</a>
+                        <a href="/livros" className="nav-link">Livros</a>
+                    </li>
+                    <li>
+                        <a href="/sobre" className="nav-link">Sobre</a>
                     </li>
                 </ul>
-                
+
                 <div className="navbar-actions">
-                  <button className="btn-primary">Entrar</button>
+                    <button className="btn-primary">Entrar</button>
                 </div>
             </div>
         </nav>

@@ -3,6 +3,7 @@ export default function Home() {
     <>
       <section id="home">
         <div id="docs">
+          <h1 className='text-3xl font-bold underline  bg-red-500 '>Teste</h1>
           <svg className="icon" role="presentation" aria-hidden="true">
             <use href="/icons.svg#documentation-icon"></use>
           </svg>

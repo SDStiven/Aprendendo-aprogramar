@@ -17,6 +17,10 @@
   }
 }
 
+@import "tailwindcss";
+
+
+
 .hero {
   position: relative;
 
