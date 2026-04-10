@@ -1,6 +1,7 @@
 
 const Livros = () => {
     return (
+        <>
         <div className="capas">
             <h1>Capas</h1>
             <div className="columns-3 ... bg-white gap ">
@@ -22,9 +23,18 @@ const Livros = () => {
                 <img src="https://picsum.photos/300/200" alt="gato" />
                 <img src="https://picsum.photos/300/200" alt="gato" />
             </div>
+            <div className=" bg-zinc-500 flex justify-center m-4 p-4 items-center rounded-lg">
+                tes
+                <img src="https://picsum.photos/300/200" alt="ft-aleatoria"/>
+                te
+
+            </div>
+            
+            
         </div>
+          
 
-
+        </>
     );
 };
 

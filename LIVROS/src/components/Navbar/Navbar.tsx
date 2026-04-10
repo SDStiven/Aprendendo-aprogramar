@@ -6,7 +6,7 @@ const Navbar: React.FC = () => {
     return (
         <nav className="navbar">
             <div className="navbar-container">
-                <div className="navbar-logo">
+                <a href="/">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="32"
@@ -19,10 +19,9 @@ const Navbar: React.FC = () => {
                         strokeLinejoin="round"
                         className="logo-icon"
                     >
-                        <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+                    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
                     </svg>
-                    <span className="logo-text">LIVROS</span>
-                </div>
+                </a>
 
                 <div className="navbar-search">
                     <div className="search-container">
@@ -47,7 +46,7 @@ const Navbar: React.FC = () => {
 
                 <ul className="navbar-links">
                     <li>
-                        <a href="/" className="nav-link active">Home</a>
+                        <a href="/" className="nav-link">Home</a>
                     </li>
                     <li>
                         <a href="/livros" className="nav-link">Livros</a>
@@ -56,10 +55,6 @@ const Navbar: React.FC = () => {
                         <a href="/sobre" className="nav-link">Sobre</a>
                     </li>
                 </ul>
-
-                <div className="navbar-actions">
-                    <button className="btn-primary">Entrar</button>
-                </div>
             </div>
         </nav>
     );
