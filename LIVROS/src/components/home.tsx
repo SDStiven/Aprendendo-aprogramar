@@ -1,9 +1,9 @@
 export default function Home() {
   return (
     <>
-      <section id="home">
+      <section id="home ">
         <div id="">
-          <img className=" h-200" src="https://picsum.photos/300/200" alt="gato" />
+          <img className=" p-4  h-200" src="https://picsum.photos/300/200" alt="gato" />
         </div>
         <div className="w-full max-w-md mx-auto bg-gray-100 p-6 rounded-lg shadow-md">
           <h2 className="text-2xl font-bold mb-4 text-center">Entre em contato</h2>
