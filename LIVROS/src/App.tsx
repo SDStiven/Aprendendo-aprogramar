@@ -4,7 +4,7 @@ import Sobre from './components/Sobre.tsx'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Livros from './components/Livros.tsx'
 import Footer from './components/Footer.tsx'
-import Home from './components/Home.tsx';
+import Home from './components/home.tsx';
 
 function App() {
   return (
