@@ -1,9 +1,10 @@
+
 const TECH_STACK = [
-  { name: 'React 19', color: 'bg-sky-500', shadow: 'shadow-sky-500/60' },
-  { name: 'TypeScript', color: 'bg-blue-600', shadow: 'shadow-blue-600/60' },
-  { name: 'Vite', color: 'bg-indigo-500', shadow: 'shadow-indigo-500/60' },
-  { name: 'Tailwind CSS', color: 'bg-teal-600', shadow: 'shadow-teal-600/60' },
-  { name: 'React Router', color: 'bg-rose-500', shadow: 'shadow-rose-500/60' },
+  { name: 'React 19', color: 'bg-sky-500', shadow: 'shadow-sky-500/60', link: 'https://react.dev/' },
+  { name: 'TypeScript', color: 'bg-blue-600', shadow: 'shadow-blue-600/60', link: 'https://www.typescriptlang.org/' },
+  { name: 'Vite', color: 'bg-indigo-500', shadow: 'shadow-indigo-500/60', link: 'https://vitejs.dev/' },
+  { name: 'Tailwind CSS', color: 'bg-teal-600', shadow: 'shadow-teal-600/60', link: 'https://tailwindcss.com/' },
+  { name: 'React Router', color: 'bg-rose-500', shadow: 'shadow-rose-500/60', link: 'https://reactrouter.com/' },
 ];
 
 export default function Sobre() {
@@ -90,6 +91,27 @@ export default function Sobre() {
               cuidados de um produto real: design system centralizado, componentes
               reutilizáveis e código limpo e tipado.
             </p>
+            <h3 className="text-2xl font-bold tracking-tight text-slate-900 mb-4 pt-4">
+              Prosimo Atualização
+            </h3>
+            <p className="text-base text-slate-500 leading-relaxed mb-4">
+              - Login <br />
+              - Cadastro <br />
+              - Recuperação de senha <br />
+              - Adicionar livros <br />
+              - Editar livros <br />
+              - Excluir livros <br />
+              - Listar livros <br />
+              - Detalhes do livro <br />
+              - Pesquisar livros <br />
+              - Filtrar livros <br />
+              - Ordenar livros <br />
+            </p>
+            <p>
+              Box de perquiza estara funcional.
+            </p>
+            <p>Formularios estaram funcionais.</p>
+
           </div>
 
           {/* Right — Tech stack + goals */}
@@ -107,12 +129,12 @@ export default function Sobre() {
                   style={{ animationDelay: `${0.1 + i * 0.08}s` }}
                 >
                   <div className={`w-2.5 h-2.5 rounded-full shrink-0 shadow-[0_0_8px_rgba(0,0,0,0.2)] ${tech.color} ${tech.shadow}`} />
-                  <span className="text-[0.9375rem] font-medium text-slate-900 flex-1">
+                  <a href={tech.link} target="_blank" className="text-[0.9375rem] font-medium text-slate-900 flex-1">
                     {tech.name}
-                  </span>
+                  </a>
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
                     fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                    className="text-slate-400"
+                    className="text-slate-400 "
                   >
                     <path d="M9 18l6-6-6-6" />
                   </svg>

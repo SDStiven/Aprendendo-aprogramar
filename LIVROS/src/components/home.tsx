@@ -227,8 +227,8 @@ function ContactSection() {
             />
           </div>
 
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className="w-full inline-flex items-center justify-center gap-2 h-[52px] px-7 rounded-xl bg-blue-600 text-white font-semibold text-[0.9375rem] transition-all hover:translate-y-[-2px] hover:bg-blue-700 hover:shadow-[0_8px_24px_rgba(37,99,235,0.35)] active:scale-[0.98] shadow-[0_4px_14px_rgba(37,99,235,0.25)]"
           >
             Enviar mensagem

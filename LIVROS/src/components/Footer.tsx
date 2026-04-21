@@ -28,9 +28,6 @@ const Footer = () => {
                 Livros
               </span>
             </div>
-            <p className="text-sm leading-relaxed text-white/45 max-w-[220px]">
-              Um catálogo digital de livros feito com paixão e código limpo.
-            </p>
           </div>
 
           {/* Navigation */}
@@ -81,7 +78,9 @@ const Footer = () => {
 
               {/* X.com */}
               <a
-                href="#"
+                href="https://x.com/"
+                target="_blank"
+                rel="noreferrer"
                 aria-label="X.com de Stiven Dias"
                 className="flex items-center gap-3 text-white/55 hover:text-white text-[15px] font-medium transition-colors w-fit group"
               >
