@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Livros from './components/Livros.tsx'
 import Footer from './components/Footer.tsx'
 import Home from './components/Home.tsx';
+import Teste from './components/Teste.tsx';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/livros" element={<Livros />} />
             <Route path="/sobre" element={<Sobre />} />
+            <Route path="/teste" element={<Teste />} />
           </Routes>
         </main>
         <Footer />

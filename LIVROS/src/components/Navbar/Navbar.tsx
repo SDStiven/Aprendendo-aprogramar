@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
-  return (
+  return ( 
     <nav className="fixed top-0 left-0 w-full z-[1000] h-[72px] bg-white/80 backdrop-blur-xl border-b border-slate-200/80 shadow-sm px-8" aria-label="Navegação principal">
       <div className="max-w-5xl mx-auto h-full flex items-center justify-between gap-8">
 
@@ -57,15 +57,15 @@ const Navbar: React.FC = () => {
 
         {/* Links */}
         <ul className="flex items-center gap-1 list-none p-0 m-0" role="list">
-          {['Home', 'Livros', 'Sobre'].map((label) => (
+          {['Home', 'Livros', 'Sobre', 'Teste',].map((label) => (
             <li key={label}>
               <NavLink
                 to={label === 'Home' ? '/' : `/${label.toLowerCase()}`}
                 end={label === 'Home'}
                 className={({ isActive }) => `
                   px-3 py-1.5 rounded-lg text-sm font-medium transition-all
-                  ${isActive 
-                    ? 'text-blue-600 bg-blue-50 font-semibold' 
+                  ${isActive
+                    ? 'text-blue-600 bg-blue-50 font-semibold'
                     : 'text-slate-500 hover:text-slate-900 hover:bg-slate-100'}
                 `}
               >
