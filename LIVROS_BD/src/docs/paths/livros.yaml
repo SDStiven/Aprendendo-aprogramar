@@ -1,0 +1,89 @@
+paths:
+  /api/livros:
+    get:
+      summary: Retorna a lista de todos os livros
+      tags: [Livros]
+      responses:
+        '200':
+          description: Lista de livros
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Livro'
+        '500':
+          description: Erro do servidor
+    post:
+      summary: Cria um novo livro
+      tags: [Livros]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Livro'
+      responses:
+        '201':
+          description: Livro criado com sucesso
+        '500':
+          description: Erro do servidor
+
+  /api/livros/{id}:
+    get:
+      summary: Obtém um livro pelo ID
+      tags: [Livros]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID do livro
+      responses:
+        '200':
+          description: Livro encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Livro'
+        '404':
+          description: Livro não encontrado
+        '500':
+          description: Erro do servidor
+    put:
+      summary: Atualiza um livro
+      tags: [Livros]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID do livro
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Livro'
+      responses:
+        '200':
+          description: Livro atualizado com sucesso
+        '500':
+          description: Erro do servidor
+    delete:
+      summary: Apaga um livro
+      tags: [Livros]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID do livro
+      responses:
+        '200':
+          description: Livro apagado com sucesso
+        '500':
+          description: Erro do servidor

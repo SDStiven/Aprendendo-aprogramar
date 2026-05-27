@@ -1,0 +1,85 @@
+components:
+  schemas:
+    Utilizador:
+      type: object
+      required:
+        - id
+        - nome
+        - email
+        - senha
+      properties:
+        id:
+          type: string
+          description: ID do utilizador
+        nome:
+          type: string
+          description: Nome do utilizador
+        email:
+          type: string
+          description: Email do utilizador
+        senha:
+          type: string
+          description: Senha do utilizador
+        updat:
+          type: string
+          format: date-time
+          description: Data de atualização
+        data_registo:
+          type: string
+          format: date-time
+          description: Data de registo
+
+    Livro:
+      type: object
+      required:
+        - titulo
+        - autor
+        - preco
+      properties:
+        id:
+          type: integer
+          description: ID do livro
+        titulo:
+          type: string
+          description: Título do livro
+        autor:
+          type: string
+          description: Autor do livro
+        preco:
+          type: number
+          description: Preço do livro
+        descricao:
+          type: string
+          description: Descrição do livro
+        id_utilizador:
+          type: string
+          description: ID do utilizador que registou o livro
+        data_criacao:
+          type: string
+          format: date-time
+          description: Data de criação
+        updat:
+          type: string
+          format: date-time
+          description: Data de atualização
+
+    Compra:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: ID da compra
+        id_utilizador:
+          type: string
+          description: ID do utilizador que realizou a compra
+        id_livro:
+          type: integer
+          description: ID do livro comprado
+        data_compra:
+          type: string
+          format: date-time
+          description: Data da compra
+        updat:
+          type: string
+          format: date-time
+          description: Data de atualização

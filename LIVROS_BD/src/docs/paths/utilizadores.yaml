@@ -1,0 +1,89 @@
+paths:
+  /api/utilizadores:
+    get:
+      summary: Retorna a lista de todos os utilizadores
+      tags: [Utilizadores]
+      responses:
+        '200':
+          description: Lista de utilizadores
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Utilizador'
+        '500':
+          description: Erro do servidor
+    post:
+      summary: Cria um novo utilizador
+      tags: [Utilizadores]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Utilizador'
+      responses:
+        '201':
+          description: Utilizador criado com sucesso
+        '500':
+          description: Erro do servidor
+
+  /api/utilizadores/{id}:
+    get:
+      summary: Obtém um utilizador pelo ID
+      tags: [Utilizadores]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: ID do utilizador
+      responses:
+        '200':
+          description: Utilizador encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Utilizador'
+        '404':
+          description: Utilizador não encontrado
+        '500':
+          description: Erro do servidor
+    put:
+      summary: Atualiza um utilizador
+      tags: [Utilizadores]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: ID do utilizador
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Utilizador'
+      responses:
+        '200':
+          description: Utilizador atualizado com sucesso
+        '500':
+          description: Erro do servidor
+    delete:
+      summary: Apaga um utilizador
+      tags: [Utilizadores]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: ID do utilizador
+      responses:
+        '200':
+          description: Utilizador apagado com sucesso
+        '500':
+          description: Erro do servidor

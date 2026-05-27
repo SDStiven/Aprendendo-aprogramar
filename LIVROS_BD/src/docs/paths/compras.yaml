@@ -1,0 +1,89 @@
+paths:
+  /api/compras:
+    get:
+      summary: Retorna a lista de todas as compras
+      tags: [Compras]
+      responses:
+        '200':
+          description: Lista de compras
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Compra'
+        '500':
+          description: Erro do servidor
+    post:
+      summary: Cria uma nova compra
+      tags: [Compras]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Compra'
+      responses:
+        '201':
+          description: Compra criada com sucesso
+        '500':
+          description: Erro do servidor
+
+  /api/compras/{id}:
+    get:
+      summary: Obtém uma compra pelo ID
+      tags: [Compras]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID da compra
+      responses:
+        '200':
+          description: Compra encontrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Compra'
+        '404':
+          description: Compra não encontrada
+        '500':
+          description: Erro do servidor
+    put:
+      summary: Atualiza uma compra
+      tags: [Compras]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID da compra
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Compra'
+      responses:
+        '200':
+          description: Compra atualizada com sucesso
+        '500':
+          description: Erro do servidor
+    delete:
+      summary: Apaga uma compra
+      tags: [Compras]
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID da compra
+      responses:
+        '200':
+          description: Compra apagada com sucesso
+        '500':
+          description: Erro do servidor

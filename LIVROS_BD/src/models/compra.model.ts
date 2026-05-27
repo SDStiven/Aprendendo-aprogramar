@@ -1,0 +1,43 @@
+import db from '../lib/bd';
+import { Compra } from '../types';
+
+export const create = async (data: Omit<Compra, 'id' | 'data_compra' | 'updat'>) => {
+    const [result] = await db.query(
+        'INSERT INTO tbl_compras (id_utilizador, id_livro, updat) VALUES (?, ?, NOW())',
+        [data.id_utilizador, data.id_livro]
+    );
+    return result;
+};
+
+export const getAll = async (): Promise<Compra[]> => {
+    const [rows] = await db.query('SELECT * FROM tbl_compras');
+    return rows as Compra[];
+};
+
+export const get = async (id: number): Promise<Compra | null> => {
+    const [rows] = await db.query('SELECT * FROM tbl_compras WHERE id = ?', [id]);
+    const compras = rows as Compra[];
+    return compras.length > 0 ? compras[0] : null;
+};
+
+export const updat = async (id: number, data: Partial<Omit<Compra, 'id' | 'data_compra' | 'updat'>>) => {
+    const keys = Object.keys(data);
+    if (keys.length === 0) {
+        const [result] = await db.query(`UPDATE tbl_compras SET updat = NOW() WHERE id = ?`, [id]);
+        return result;
+    }
+
+    const fields = keys.map(key => `${key} = ?`);
+    fields.push('updat = NOW()');
+    
+    const values = Object.values(data);
+    values.push(id);
+    
+    const [result] = await db.query(`UPDATE tbl_compras SET ${fields.join(', ')} WHERE id = ?`, values);
+    return result;
+};
+
+export const deleta = async (id: number) => {
+    const [result] = await db.query('DELETE FROM tbl_compras WHERE id = ?', [id]);
+    return result;
+};
