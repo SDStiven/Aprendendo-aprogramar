@@ -1,7 +1,22 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
+  const location = useLocation();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const user = localStorage.getItem('user');
+    setIsAuthenticated(!!user);
+  }, [location.pathname]);
+
+  const links = ['Home', 'Livros', 'Sobre', 'Teste'];
+  if (isAuthenticated) {
+    links.push('Perfil');
+  } else {
+    links.push('Login');
+  }
+
   return ( 
     <nav className="fixed top-0 left-0 w-full z-[1000] h-[72px] bg-white/80 backdrop-blur-xl border-b border-slate-200/80 shadow-sm px-8" aria-label="Navegação principal">
       <div className="max-w-5xl mx-auto h-full flex items-center justify-between gap-8">
@@ -57,7 +72,7 @@ const Navbar: React.FC = () => {
 
         {/* Links */}
         <ul className="flex items-center gap-1 list-none p-0 m-0" role="list">
-          {['Home', 'Livros', 'Sobre', 'Teste',].map((label) => (
+          {links.map((label) => (
             <li key={label}>
               <NavLink
                 to={label === 'Home' ? '/' : `/${label.toLowerCase()}`}

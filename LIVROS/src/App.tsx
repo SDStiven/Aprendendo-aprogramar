@@ -6,6 +6,8 @@ import Livros from './components/Livros.tsx'
 import Footer from './components/Footer.tsx'
 import Home from './components/Home.tsx';
 import Teste from './components/Teste.tsx';
+import Login from './components/Login.tsx';
+import Perfil from './components/Perfil.tsx';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
             <Route path="/livros" element={<Livros />} />
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/teste" element={<Teste />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/perfil" element={<Perfil />} />
           </Routes>
         </main>
         <Footer />

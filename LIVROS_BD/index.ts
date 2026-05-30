@@ -1,6 +1,7 @@
 import express, { type Request, type Response } from "express";
 import swaggerUi from 'swagger-ui-express';
 import swaggerJsDoc from 'swagger-jsdoc';
+import cors from 'cors';
 import utilizadorRoutes from './src/routes/utilizador.routes.js';
 import livroRoutes from './src/routes/livro.routes.js';
 import compraRoutes from './src/routes/compra.routes.js';
@@ -8,10 +9,8 @@ import compraRoutes from './src/routes/compra.routes.js';
 const app = express(); // cria a aplicação
 app.use(express.json()); // para interpretar o corpo das requisições como JSON
 
-// app.use(cors({
-//   origin: "http://localhost:3000",
-//   credentials: true
-// }))
+// Configura o CORS para permitir pedidos do frontend
+app.use(cors());
  
 
 

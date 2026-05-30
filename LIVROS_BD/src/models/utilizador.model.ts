@@ -41,3 +41,9 @@ export const deleta = async (id: string) => {
     const [result] = await db.query('DELETE FROM tbl_utilizadores WHERE id = ?', [id]);
     return result;
 };
+
+export const getByEmail = async (email: string): Promise<Utilizador | null> => {
+    const [rows] = await db.query('SELECT * FROM tbl_utilizadores WHERE email = ?', [email]);
+    const utilizadores = rows as Utilizador[];
+    return utilizadores.length > 0 ? utilizadores[0] : null;
+};
