@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 /* ── Section: Hero ────────────────────────────────────────── */
@@ -174,6 +175,47 @@ function FeaturesSection() {
 
 /* ── Section: Contact ─────────────────────────────────────── */
 function ContactSection() {
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('loading');
+    
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const email = formData.get('email') || '';
+    const phone = formData.get('phone') || '';
+    const message = formData.get('message') || '';
+
+    // Insira aqui o seu email verdadeiro
+    const seuEmail = import.meta.env.VITE_SEU_EMAIL;
+
+
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${seuEmail}`, {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            Email: email,
+            Telefone: phone,
+            Mensagem: message
+        })
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        form.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
+  };
+
   return (
     <section id="contato" className="py-28 px-8 bg-slate-100">
       <div className="max-w-lg mx-auto animate-[fade-in-up_0.64s_ease_both]">
@@ -193,13 +235,25 @@ function ContactSection() {
         </div>
 
         {/* Form */}
-        <form className="bg-white border border-slate-200 rounded-[20px] p-8 shadow-md flex flex-col gap-5">
+        <form onSubmit={handleSubmit} className="bg-white border border-slate-200 rounded-[20px] p-8 shadow-md flex flex-col gap-5">
+          {status === 'success' && (
+            <div className="bg-green-50 text-green-700 p-4 rounded-xl text-sm text-center border border-green-100 mb-2">
+              Mensagem enviada com sucesso! Entraremos em contacto em breve.
+            </div>
+          )}
+          {status === 'error' && (
+            <div className="bg-red-50 text-red-600 p-4 rounded-xl text-sm text-center border border-red-100 mb-2">
+              Ocorreu um erro ao enviar a mensagem. Tente novamente.
+            </div>
+          )}
+          
           <div>
             <label htmlFor="contact-email" className="block text-sm font-medium text-slate-900 mb-2">Email</label>
             <input
               type="email"
               id="contact-email"
               name="email"
+              required
               placeholder="seuemail@exemplo.com"
               className="w-full h-12 px-4 rounded-xl border border-slate-200 bg-slate-50 text-[0.9375rem] text-slate-900 outline-none transition-all focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10"
             />
@@ -211,6 +265,7 @@ function ContactSection() {
               type="tel"
               id="contact-phone"
               name="phone"
+              required
               placeholder="+238 999 9999"
               className="w-full h-12 px-4 rounded-xl border border-slate-200 bg-slate-50 text-[0.9375rem] text-slate-900 outline-none transition-all focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10"
             />
@@ -221,6 +276,7 @@ function ContactSection() {
             <textarea
               id="contact-message"
               name="message"
+              required
               rows={4}
               placeholder="A sua mensagem..."
               className="w-full p-4 rounded-xl border border-slate-200 bg-slate-50 text-[0.9375rem] text-slate-900 outline-none resize-none transition-all focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 leading-relaxed"
@@ -229,13 +285,16 @@ function ContactSection() {
 
           <button
             type="submit"
-            className="w-full inline-flex items-center justify-center gap-2 h-[52px] px-7 rounded-xl bg-blue-600 text-white font-semibold text-[0.9375rem] transition-all hover:translate-y-[-2px] hover:bg-blue-700 hover:shadow-[0_8px_24px_rgba(37,99,235,0.35)] active:scale-[0.98] shadow-[0_4px_14px_rgba(37,99,235,0.25)]"
+            disabled={status === 'loading'}
+            className="w-full inline-flex items-center justify-center gap-2 h-[52px] px-7 rounded-xl bg-blue-600 text-white font-semibold text-[0.9375rem] transition-all hover:translate-y-[-2px] hover:bg-blue-700 hover:shadow-[0_8px_24px_rgba(37,99,235,0.35)] active:scale-[0.98] shadow-[0_4px_14px_rgba(37,99,235,0.25)] disabled:opacity-70 disabled:hover:translate-y-0 disabled:cursor-not-allowed"
           >
-            Enviar mensagem
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
+            {status === 'loading' ? 'A enviar...' : 'Enviar mensagem'}
+            {status !== 'loading' && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            )}
           </button>
         </form>
       </div>

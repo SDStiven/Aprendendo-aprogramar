@@ -1,32 +1,38 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Login: React.FC = () => {
+const Cadastro: React.FC = () => {
   const navigate = useNavigate();
+  const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleCadastro = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
 
     try {
-      const response = await fetch('http://localhost:8080/api/utilizadores/login', {
+      const response = await fetch('http://localhost:8080/api/utilizadores', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, senha: password }),
+        body: JSON.stringify({ 
+            id: crypto.randomUUID(), 
+            nome, 
+            email, 
+            senha: password 
+        }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        localStorage.setItem('user', JSON.stringify(data.user));
-        navigate('/perfil');
+        // Redireciona para o login após cadastro com sucesso
+        navigate('/login');
       } else {
-        setError(data.error || 'Erro ao fazer login');
+        setError(data.error || 'Erro ao criar conta');
       }
     } catch (err) {
       setError('Erro de conexão com o servidor');
@@ -52,30 +58,52 @@ const Login: React.FC = () => {
                 strokeLinejoin="round"
                 aria-hidden="true"
               >
-                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <line x1="19" y1="8" x2="19" y2="14" />
+                <line x1="22" y1="11" x2="16" y2="11" />
               </svg>
             </div>
           </div>
         </div>
         
         <h1 className="text-[28px] font-display text-center text-slate-900 mb-2">
-          Bem-vindo de volta
+          Criar nova conta
         </h1>
         <p className="text-center text-slate-500 mb-8 text-[16px]">
-          Acesse sua conta para continuar
+          Preencha os dados abaixo para se cadastrar
         </p>
 
-        <form className="flex flex-col gap-5" onSubmit={handleLogin}>
+        <form className="flex flex-col gap-5" onSubmit={handleCadastro}>
           {error && (
             <div className="bg-red-50 text-red-600 p-3 rounded-xl text-sm text-center border border-red-100 animate-fade-in">
               {error}
             </div>
           )}
-          
-          {/* Floating label input */}
+
+          {/* Nome input */}
           <div className="relative group">
             <input
               type="text"
+              id="nome"
+              value={nome}
+              onChange={(e) => setNome(e.target.value)}
+              className="block w-full px-4 pb-2.5 pt-5 text-base text-slate-900 bg-transparent border border-slate-300 rounded-xl appearance-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent peer transition-shadow"
+              placeholder=" "
+              required
+            />
+            <label
+              htmlFor="nome"
+              className="absolute text-base text-slate-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] bg-white px-1 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-75 peer-focus:-translate-y-4 left-3 cursor-text"
+            >
+              Nome completo
+            </label>
+          </div>
+          
+          {/* Email input */}
+          <div className="relative group">
+            <input
+              type="email"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -87,7 +115,7 @@ const Login: React.FC = () => {
               htmlFor="email"
               className="absolute text-base text-slate-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] bg-white px-1 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-75 peer-focus:-translate-y-4 left-3 cursor-text"
             >
-              E-mail ou telefone
+              E-mail
             </label>
           </div>
 
@@ -109,21 +137,15 @@ const Login: React.FC = () => {
             </label>
           </div>
 
-          <div className="flex items-start mb-2">
-            <a href="#" className="text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors">
-              Esqueceu sua senha?
-            </a>
-          </div>
-
           <div className="flex items-center justify-between mt-6">
-            <a href="/cadastro" onClick={(e) => { e.preventDefault(); navigate('/cadastro'); }} className="text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 py-2 px-3 -ml-3 rounded-xl transition-all">
-              Criar conta
+            <a href="/login" onClick={(e) => { e.preventDefault(); navigate('/login'); }} className="text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 py-2 px-3 -ml-3 rounded-xl transition-all">
+              Já tenho conta
             </a>
             <button
               type="submit"
               className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2.5 px-8 rounded-xl transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
             >
-              Entrar
+              Cadastrar
             </button>
           </div>
         </form>
@@ -144,4 +166,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default Cadastro;

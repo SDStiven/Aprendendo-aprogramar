@@ -7,6 +7,7 @@ import Footer from './components/Footer.tsx'
 import Home from './components/Home.tsx';
 import Teste from './components/Teste.tsx';
 import Login from './components/Login.tsx';
+import Cadastro from './components/Cadastro.tsx';
 import Perfil from './components/Perfil.tsx';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/teste" element={<Teste />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/perfil" element={<Perfil />} />
           </Routes>
         </main>
