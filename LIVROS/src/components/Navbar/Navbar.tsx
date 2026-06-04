@@ -94,7 +94,7 @@ const Navbar: React.FC = () => {
           <NavLink to={link === 'Perfil' ? '/perfil' : '/login'}>
             {link}
           </NavLink>
-          {!isAuthenticated && (
+          {!  isAuthenticated && (
             <NavLink to='/new_livro' 
             className="text-[#13a4ec] font-semibold p-2 rounded-sm hover:underline">
               New_livro

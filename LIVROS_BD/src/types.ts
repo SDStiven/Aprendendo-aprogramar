@@ -10,16 +10,17 @@ export interface Utilizador {
 export interface Livro {
     id: number;
     titulo: string;
-    // capa:            
     autor: string;
-    // categaria:
     preco: number;
-    // ano_lancamento
     descricao?: string | null;
+    capa?: string | null;
+    ano?: string | null;
+    categoria?: string | null;
     id_utilizador?: string | null;
     data_criacao: Date;
     updat: Date;
 }
+
 
 export interface Compra {
     id: number;

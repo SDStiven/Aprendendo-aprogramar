@@ -3,8 +3,8 @@ import { Livro } from '../types';
 
 export const create = async (data: Omit<Livro, 'id' | 'data_criacao' | 'updat'>) => {
     const [result] = await db.query(
-        'INSERT INTO tbl_livros (titulo, autor, preco, descricao, id_utilizador, updat) VALUES (?, ?, ?, ?, ?, NOW())',
-        [data.titulo, data.autor, data.preco, data.descricao, data.id_utilizador]
+        'INSERT INTO tbl_livros (titulo, autor, preco, descricao, capa, ano, categoria, id_utilizador, updat) VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW())',
+        [data.titulo, data.autor, data.preco, data.descricao ?? null, data.capa ?? null, data.ano ?? null, data.categoria ?? null, data.id_utilizador ?? null]
     );
     return result;
 };
