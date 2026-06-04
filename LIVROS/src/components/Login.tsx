@@ -34,12 +34,12 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-72px)] bg-white sm:bg-slate-50 p-4">
-      <div className="w-full max-w-[450px] bg-white sm:border sm:border-slate-200 sm:rounded-3xl sm:px-10 sm:py-12 flex flex-col shadow-sm">
+    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-72px)] bg-slate-950 p-4">
+      <div className="w-full max-w-[450px] bg-slate-900 sm:border sm:border-white/10 sm:rounded-3xl sm:px-10 sm:py-12 flex flex-col shadow-2xl">
         {/* Site Logo */}
         <div className="flex justify-center mb-6">
-          <div className="flex items-center gap-2.5 text-slate-900 group cursor-default">
-            <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 transition-transform group-hover:rotate-[-8deg] group-hover:scale-110 shadow-sm border border-blue-100">
+          <div className="flex items-center gap-2.5 text-white group cursor-default">
+            <div className="w-[52px] h-[52px] rounded-xl flex items-center justify-center bg-gradient-to-br from-blue-600 to-blue-500 shadow-[0_4px_14px_rgba(37,99,235,0.25)] text-white transition-transform group-hover:rotate-[-8deg] group-hover:scale-110">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -58,70 +58,65 @@ const Login: React.FC = () => {
           </div>
         </div>
         
-        <h1 className="text-[28px] font-display text-center text-slate-900 mb-2">
+        <h1 className="text-[28px] font-display text-center text-white mb-2">
           Bem-vindo de volta
         </h1>
-        <p className="text-center text-slate-500 mb-8 text-[16px]">
+        <p className="text-center text-slate-400 mb-8 text-[16px]">
           Acesse sua conta para continuar
         </p>
 
         <form className="flex flex-col gap-5" onSubmit={handleLogin}>
           {error && (
-            <div className="bg-red-50 text-red-600 p-3 rounded-xl text-sm text-center border border-red-100 animate-fade-in">
+            <div className="bg-red-950/50 text-red-400 p-3 rounded-xl text-sm text-center border border-red-500/30 animate-fade-in">
               {error}
             </div>
           )}
           
-          {/* Floating label input */}
-          <div className="relative group">
+          {/* Email input */}
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
+              E-mail ou telefone
+            </label>
             <input
               type="text"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="block w-full px-4 pb-2.5 pt-5 text-base text-slate-900 bg-transparent border border-slate-300 rounded-xl appearance-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent peer transition-shadow"
-              placeholder=" "
               required
+              placeholder="seuemail@exemplo.com"
+              className="w-full h-12 px-4 rounded-xl border border-white/10 bg-slate-950/50 text-[0.9375rem] text-white placeholder-slate-500 outline-none transition-all focus:border-blue-600 focus:ring-4 focus:ring-blue-600/15"
             />
-            <label
-              htmlFor="email"
-              className="absolute text-base text-slate-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] bg-white px-1 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-75 peer-focus:-translate-y-4 left-3 cursor-text"
-            >
-              E-mail ou telefone
-            </label>
           </div>
 
-          <div className="relative group mt-1">
+          {/* Password input */}
+          <div>
+            <label htmlFor="password" className="block text-sm font-medium text-slate-300 mb-2">
+              Senha
+            </label>
             <input
               type="password"
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="block w-full px-4 pb-2.5 pt-5 text-base text-slate-900 bg-transparent border border-slate-300 rounded-xl appearance-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent peer transition-shadow"
-              placeholder=" "
               required
+              placeholder="Sua senha"
+              className="w-full h-12 px-4 rounded-xl border border-white/10 bg-slate-950/50 text-[0.9375rem] text-white placeholder-slate-500 outline-none transition-all focus:border-blue-600 focus:ring-4 focus:ring-blue-600/15"
             />
-            <label
-              htmlFor="password"
-              className="absolute text-base text-slate-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] bg-white px-1 peer-focus:px-2 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-75 peer-focus:-translate-y-4 left-3 cursor-text"
-            >
-              Senha
-            </label>
           </div>
 
           <div className="flex items-start mb-2">
-            <a href="#" className="text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors">
+            <a href="#" className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors">
               Esqueceu sua senha?
             </a>
           </div>
 
           <div className="flex items-center justify-between mt-6">
-            <a href="/cadastro" onClick={(e) => { e.preventDefault(); navigate('/cadastro'); }} className="text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 py-2 px-3 -ml-3 rounded-xl transition-all">
+            <a href="/cadastro" onClick={(e) => { e.preventDefault(); navigate('/cadastro'); }} className="text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 py-2 px-3 -ml-3 rounded-xl transition-all">
               Criar conta
             </a>
             <button
               type="submit"
-              className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2.5 px-8 rounded-xl transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
+              className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold h-11 px-8 rounded-xl transition-all shadow-[0_4px_14px_rgba(37,99,235,0.25)] hover:shadow-[0_8px_24px_rgba(37,99,235,0.35)] hover:-translate-y-0.5 active:scale-[0.98]"
             >
               Entrar
             </button>
@@ -130,14 +125,14 @@ const Login: React.FC = () => {
       </div>
       
       {/* Footer style links */}
-      <div className="mt-6 flex gap-6 text-[12px] text-slate-600 sm:max-w-[450px] w-full px-2 justify-between">
-        <div className="cursor-pointer hover:bg-slate-100 py-1 px-2 rounded -ml-2">
+      <div className="mt-6 flex gap-6 text-[12px] text-slate-400 sm:max-w-[450px] w-full px-2 justify-between">
+        <div className="cursor-pointer hover:bg-white/5 hover:text-white py-1 px-2 rounded -ml-2 transition-all">
           Português (Brasil)
         </div>
-        <div className="flex gap-2">
-          <a href="#" className="hover:bg-slate-100 px-2 py-1 rounded transition-colors">Ajuda</a>
-          <a href="#" className="hover:bg-slate-100 px-2 py-1 rounded transition-colors">Privacidade</a>
-          <a href="#" className="hover:bg-slate-100 px-2 py-1 rounded transition-colors">Termos</a>
+        <div className="flex gap-2 text-slate-400">
+          <a href="#" className="hover:bg-white/5 hover:text-white px-2 py-1 rounded transition-colors">Ajuda</a>
+          <a href="#" className="hover:bg-white/5 hover:text-white px-2 py-1 rounded transition-colors">Privacidade</a>
+          <a href="#" className="hover:bg-white/5 hover:text-white px-2 py-1 rounded transition-colors">Termos</a>
         </div>
       </div>
     </div>

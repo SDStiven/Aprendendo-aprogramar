@@ -10,11 +10,12 @@ const Navbar: React.FC = () => {
     setIsAuthenticated(!!user);
   }, [location.pathname]);
 
-  const links = ['Home', 'Livros', 'Sobre', 'Teste'];
+  const links = ['Home', 'Livros', 'Sobre'];
+  let link = '';
   if (isAuthenticated) {
-    links.push('Perfil');
+    link = 'Perfil';
   } else {
-    links.push('Login');
+    link = 'Login';
   }
 
   return ( 
@@ -42,7 +43,7 @@ const Navbar: React.FC = () => {
         </NavLink>
 
         {/* Search */}
-        <div className="hidden md:block flex-1 max-w-sm">
+        {/* <div className="hidden md:block flex-1 max-w-sm">
           <div className="relative flex items-center group">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +69,7 @@ const Navbar: React.FC = () => {
               aria-label="Pesquisar livros"
             />
           </div>
-        </div>
+        </div> */}
 
         {/* Links */}
         <ul className="flex items-center gap-1 list-none p-0 m-0" role="list">
@@ -89,7 +90,18 @@ const Navbar: React.FC = () => {
             </li>
           ))}
         </ul>
+        <div className="text-[#13a4ec] font-semibold p-2 rounded-sm ">
+          <NavLink to={link === 'Perfil' ? '/perfil' : '/login'}>
+            {link}
+          </NavLink>
+          {!isAuthenticated && (
+            <NavLink to='/new_livro' 
+            className="text-[#13a4ec] font-semibold p-2 rounded-sm hover:underline">
+              New_livro
+            </NavLink>
+          )}
 
+        </div>
       </div>
     </nav>
   );

@@ -13,7 +13,7 @@ export interface Livro {
 
 const API_URL = 'http://localhost:8080/api/livros';
 
-export default function Teste() {
+export default function New_livro() {
   const [livros, setLivros] = useState<Livro[]>([]);
   const [formData, setFormData] = useState({
     titulo: '',
@@ -127,14 +127,14 @@ export default function Teste() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0f172a] text-slate-200 font-sans p-4 md:p-8 selection:bg-indigo-500/30">
+    <div className="min-h-screen bg-slate-950 text-slate-300 font-sans p-4 md:p-8 selection:bg-blue-500/30">
       <div className="max-w-7xl mx-auto space-y-8">
         
         {/* Header */}
         <header className="text-center space-y-4 py-8">
-          <div className="inline-block p-1 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 shadow-xl shadow-indigo-500/20">
-            <div className="bg-[#0f172a] rounded-full px-8 py-3">
-              <h1 className="text-3xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 tracking-tight">
+          <div className="inline-block p-1 rounded-full bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 shadow-xl shadow-blue-500/10">
+            <div className="bg-slate-950 rounded-full px-8 py-3">
+              <h1 className="text-3xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600 tracking-tight">
                 Gestão de Biblioteca
               </h1>
             </div>
@@ -149,10 +149,10 @@ export default function Teste() {
           {/* Form Section */}
           <div className="lg:col-span-4">
             <div className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
-              <div className="relative bg-[#1e293b]/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 shadow-2xl">
-                <h2 className="text-2xl font-bold text-slate-100 mb-6 flex items-center gap-2">
-                  <svg className="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+              <div className="relative bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl">
+                <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                  <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
                   {editingId ? 'Atualizar Livro' : 'Novo Livro'}
                 </h2>
                 
@@ -164,7 +164,7 @@ export default function Teste() {
                       value={formData.titulo}
                       onChange={e => setFormData({...formData, titulo: e.target.value})}
                       placeholder="Ex: O Senhor dos Anéis"
-                      className="w-full bg-[#0f172a]/50 border border-slate-600/50 rounded-xl px-4 py-3 text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all duration-300"
+                      className="w-full bg-slate-950/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-4 focus:ring-blue-600/15 focus:border-blue-500 transition-all duration-300"
                       required
                     />
                   </div>
@@ -176,7 +176,7 @@ export default function Teste() {
                       value={formData.autor}
                       onChange={e => setFormData({...formData, autor: e.target.value})}
                       placeholder="Ex: J.R.R. Tolkien"
-                      className="w-full bg-[#0f172a]/50 border border-slate-600/50 rounded-xl px-4 py-3 text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all duration-300"
+                      className="w-full bg-slate-950/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-4 focus:ring-blue-600/15 focus:border-blue-500 transition-all duration-300"
                       required
                     />
                   </div>
@@ -189,7 +189,7 @@ export default function Teste() {
                       value={formData.preco || ''}
                       onChange={e => setFormData({...formData, preco: parseFloat(e.target.value)})}
                       placeholder="Ex: 19.99"
-                      className="w-full bg-[#0f172a]/50 border border-slate-600/50 rounded-xl px-4 py-3 text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all duration-300"
+                      className="w-full bg-slate-950/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-4 focus:ring-blue-600/15 focus:border-blue-500 transition-all duration-300"
                       required
                     />
                   </div>
@@ -201,14 +201,14 @@ export default function Teste() {
                       onChange={e => setFormData({...formData, descricao: e.target.value})}
                       placeholder="Uma breve descrição..."
                       rows={3}
-                      className="w-full bg-[#0f172a]/50 border border-slate-600/50 rounded-xl px-4 py-3 text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all duration-300 resize-none"
+                      className="w-full bg-slate-950/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-4 focus:ring-blue-600/15 focus:border-blue-500 transition-all duration-300 resize-none"
                     />
                   </div>
 
                   <div className="pt-4 flex gap-3">
                     <button 
                       type="submit"
-                      className="flex-1 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-400 hover:to-purple-500 text-white font-medium py-3 px-4 rounded-xl shadow-lg shadow-indigo-500/25 transform transition-all duration-200 active:scale-95 flex items-center justify-center gap-2"
+                      className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-xl shadow-[0_4px_14px_rgba(37,99,235,0.25)] hover:shadow-[0_8px_24px_rgba(37,99,235,0.35)] transform transition-all duration-200 active:scale-95 flex items-center justify-center gap-2"
                     >
                       {editingId ? (
                         <>
@@ -226,7 +226,7 @@ export default function Teste() {
                       <button 
                         type="button"
                         onClick={cancelEdit}
-                        className="px-4 py-3 bg-slate-700 hover:bg-slate-600 text-slate-200 font-medium rounded-xl transition-all duration-200 active:scale-95"
+                        className="px-4 py-3 border border-white/20 hover:bg-white/10 text-white font-medium rounded-xl transition-all duration-200 active:scale-95"
                         title="Cancelar Edição"
                       >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
@@ -240,11 +240,11 @@ export default function Teste() {
 
           {/* List Section */}
           <div className="lg:col-span-8">
-            <div className="bg-[#1e293b]/40 backdrop-blur-md border border-slate-700/30 rounded-2xl p-6 lg:p-8 min-h-[600px] shadow-2xl flex flex-col">
+            <div className="bg-slate-900/40 backdrop-blur-md border border-white/5 rounded-2xl p-6 lg:p-8 min-h-[600px] shadow-2xl flex flex-col">
               <div className="flex items-center justify-between mb-8">
-                <h2 className="text-2xl font-bold text-slate-100 flex items-center gap-3">
-                  <div className="p-2 bg-purple-500/10 rounded-lg">
-                    <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                <h2 className="text-2xl font-bold text-white flex items-center gap-3">
+                  <div className="p-2 bg-blue-500/10 rounded-lg">
+                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
                   </div>
                   Acervo ({livros.length})
                 </h2>
@@ -252,33 +252,33 @@ export default function Teste() {
 
               {livros.length === 0 ? (
                 <div className="flex-1 flex flex-col items-center justify-center text-slate-500 space-y-4">
-                  <div className="w-24 h-24 rounded-full bg-slate-800/50 flex items-center justify-center border border-slate-700/50">
-                    <svg className="w-12 h-12 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                  <div className="w-24 h-24 rounded-full bg-slate-900/50 flex items-center justify-center border border-white/5">
+                    <svg className="w-12 h-12 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
                   </div>
                   <p className="text-lg">Nenhum livro no acervo ainda.</p>
-                  <p className="text-sm text-slate-600">Adicione um livro usando o formulário ao lado.</p>
+                  <p className="text-sm text-slate-500">Adicione um livro usando o formulário ao lado.</p>
                 </div>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
                   {livros.map(livro => (
                     <div 
                       key={livro.id}
-                      className={`group relative bg-[#0f172a]/80 border ${editingId === livro.id ? 'border-purple-500 ring-1 ring-purple-500/50' : 'border-slate-700/50 hover:border-indigo-500/50'} rounded-xl p-5 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10 flex flex-col overflow-hidden`}
+                      className={`group relative bg-slate-950/80 border ${editingId === livro.id ? 'border-blue-500 ring-1 ring-blue-500/50' : 'border-white/10 hover:border-blue-500/50'} rounded-xl p-5 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 flex flex-col overflow-hidden`}
                     >
                       {editingId === livro.id && (
-                        <div className="absolute top-0 right-0 w-16 h-16 bg-purple-500/10 rotate-45 transform translate-x-8 -translate-y-8 blur-xl"></div>
+                        <div className="absolute top-0 right-0 w-16 h-16 bg-blue-500/10 rotate-45 transform translate-x-8 -translate-y-8 blur-xl"></div>
                       )}
                       
                       <div className="flex justify-between items-start mb-3 relative z-10">
                         <h3 className="text-xl font-semibold text-slate-100 line-clamp-1 pr-4" title={livro.titulo}>
                           {livro.titulo}
                         </h3>
-                        <span className="shrink-0 bg-emerald-500/10 text-emerald-400 font-mono text-sm px-2.5 py-1 rounded-md border border-emerald-500/20">
+                        <span className="shrink-0 bg-blue-500/15 text-blue-400 font-mono text-sm px-2.5 py-1 rounded-md border border-blue-500/30">
                           €{livro.preco}
                         </span>
                       </div>
                       
-                      <p className="text-indigo-300 text-sm font-medium mb-3 relative z-10 flex items-center gap-2">
+                      <p className="text-blue-400 text-sm font-medium mb-3 relative z-10 flex items-center gap-2">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
                         {livro.autor}
                       </p>
@@ -289,7 +289,7 @@ export default function Teste() {
                         </p>
                       )}
                       
-                      <div className="mt-auto pt-4 border-t border-slate-700/50 flex items-center justify-between relative z-10">
+                      <div className="mt-auto pt-4 border-t border-white/10 flex items-center justify-between relative z-10">
                         <span className="text-xs text-slate-500 flex items-center gap-1">
                           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                           {livro.updat ? new Date(livro.updat).toLocaleDateString('pt-PT') : new Date().toLocaleDateString('pt-PT')}
@@ -298,14 +298,14 @@ export default function Teste() {
                         <div className="flex gap-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
                           <button 
                             onClick={() => handleEdit(livro)}
-                            className="p-2 text-indigo-400 hover:text-indigo-300 hover:bg-indigo-500/10 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
+                            className="p-2 text-blue-400 hover:text-blue-300 hover:bg-blue-500/10 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/50"
                             title="Editar Livro"
                           >
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
                           </button>
                           <button 
                             onClick={() => handleDelete(livro.id)}
-                            className="p-2 text-pink-500 hover:text-pink-400 hover:bg-pink-500/10 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-pink-500/50"
+                            className="p-2 text-red-600 hover:text-red-500 hover:bg-red-600/10 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-red-600/50"
                             title="Eliminar Livro"
                           >
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
