@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "@types/node": "^25.9.2",
+    "typescript": "^6.0.3"
+  },
+  "name": "calculator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "undici-types": "^7.24.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

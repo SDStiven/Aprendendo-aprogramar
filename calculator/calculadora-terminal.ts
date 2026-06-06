@@ -30,12 +30,14 @@ async function iniciarCalculadora() {
     const operacao = operacaoInput as Operacao;
 
     // Valida se as entradas são números válidos
-    if (isNaN(num1) || PageTransitionEvent(num2)) {
+      // CÓDIGO CORRIGIDO: Usa isNaN para os dois números
+    if (isNaN(num1) || isNaN(num2)) {
         console.log("Erro: Por favor, insira números válidos.");
     } else {
         const resultado = calcular(num1, num2, operacao);
         console.log(`Resultado: ${num1} ${operacao} ${num2} = ${resultado}`);
     }
+
 
     // Fecha a ligação com o terminal
     rl.close();
