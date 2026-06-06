@@ -2,7 +2,7 @@
 -- Executar uma vez na base de dados MySQL
 
 ALTER TABLE tbl_livros
-    ADD COLUMN IF NOT EXISTS capa VARCHAR(500) NULL,
-    ADD COLUMN IF NOT EXISTS ano VARCHAR(10) NULL,
-    ADD COLUMN IF NOT EXISTS categoria VARCHAR(100) NULL;
+    ADD COLUMN capa VARCHAR(500) NULL,
+    ADD COLUMN ano VARCHAR(10) NULL,
+    ADD COLUMN categoria VARCHAR(100) NULL;
 
