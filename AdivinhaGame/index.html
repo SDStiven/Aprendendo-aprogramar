@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinha</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; background-color: #f4f4f9; }
+        .container { background: white; padding: 30px; border-radius: 10px; display: inline-block; box-shadow: 0px 4px 10px rgba(0,0,0,0.1); }
+        input { padding: 10px; font-size: 16px; width: 80px; text-align: center; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: #007bff; color: white; border: none; border-radius: 5px; }
+        button:hover { background-color: #0056b3; }
+        #mensagem { margin-top: 20px; font-size: 18px; font-weight: bold; }
+        .tentativas { color: #666; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Jogo da Adivinhação</h1>
+        <p>Tente adivinhar o número secreto entre <strong>1 e 100</strong>.</p>
+        
+        <input type="number" id="palpiteInput" min="1" max="100" placeholder="0">
+        <button id="verificarBtn">Verificar</button>
+
+        <p id="mensagem"></p>
+        <p class="tentativas">Tentativas: <span id="contadorTentativas">0</span></p>
+    </div>
+
+    <!-- Chamamos o arquivo JavaScript diretamente -->
+    <script src="jogo.js"></script>
+</body>
+</html>

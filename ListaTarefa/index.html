@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .input-container { margin-bottom: 20px; }
+        input { padding: 8px; font-size: 16px; }
+        button { padding: 8px 12px; font-size: 16px; cursor: pointer; }
+        ul { list-style-type: none; padding: 0; }
+        li { padding: 10px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; max-width: 300px; }
+        .remover-btn { color: red; cursor: pointer; border: none; background: none; }
+    </style>
+</head>
+<body>
+
+    <h1>A Minha Lista de Tarefas</h1>
+
+    <div class="input-container">
+        <input type="text" id="tarefaInput" placeholder="Digite uma nova tarefa...">
+        <button id="adicionarBtn">Adicionar</button>
+    </div>
+
+    <ul id="listaTarefas"></ul>
+
+    <!-- IMPORTANTE: Chamamos o ficheiro .js que o TypeScript vai gerar -->
+    <script src="app.js"></script>
+</body>
+</html>
