@@ -5,6 +5,7 @@ import cors from 'cors';
 import utilizadorRoutes from './src/routes/utilizador.routes.js';
 import livroRoutes from './src/routes/livro.routes.js';
 import compraRoutes from './src/routes/compra.routes.js';
+import { inicializarBancoDeDados } from './src/lib/bd.js';
 
 const app = express(); // cria a aplicação
 app.use(express.json()); // para interpretar o corpo das requisições como JSON
@@ -12,22 +13,6 @@ app.use(express.json()); // para interpretar o corpo das requisições como JSON
 // Configura o CORS para permitir pedidos do frontend
 app.use(cors());
  
-
-
-// const graphqlServer = new ApolloServer({
-//   typeDefs,
-//   resolvers
-// })
-
-// await graphqlServer.start()
-
-// app.use("/graphql",
-//   expressMiddleware(graphqlServer, {
-//     context: async ({ req }) => ({
-//       token: req.headers.authorization
-//     })
-//   })
-// )
 
 const swaggerOptions = {
   swaggerDefinition: {
@@ -54,7 +39,8 @@ app.use('/api/livros', livroRoutes);
 app.use('/api/compras', compraRoutes);
 
 
-// inicia o servidor na porta 3000
-app.listen(8080, () => {
+// inicia o servidor na porta 8080
+app.listen(8080, async () => {
   console.log("Servidor rodando em http://localhost:8080");
+  await inicializarBancoDeDados();
 });
