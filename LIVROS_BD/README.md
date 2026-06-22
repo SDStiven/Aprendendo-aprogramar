@@ -52,7 +52,7 @@ npm run dev
 ```
 Ao iniciar, o servidor tentará se conectar ao MySQL, criará o banco de dados `LIVROS` caso não exista, e criará/verificará as tabelas estruturais automaticamente.
 
-O servidor estará rodando em: **`http://localhost:8080`**
+O servidor estará rodando em: **`${process.env.NEXT_PUBLIC_API_URL}`**
 
 ### Usando Docker (Opcional)
 Se preferir rodar o banco de dados MySQL via container Docker:
@@ -69,7 +69,7 @@ Se preferir rodar o banco de dados MySQL via container Docker:
 
 A documentação interativa da API (Swagger UI) está configurada e pode ser acessada enquanto o servidor estiver rodando no endereço:
 
-👉 **`http://localhost:8080/docs`**
+👉 **`${process.env.NEXT_PUBLIC_API_URL}/docs`**
 
 Aqui você poderá testar todas as rotas diretamente do navegador.
 

@@ -24,7 +24,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: 'http://localhost:8080',
+        url: `${process.env.NEXT_PUBLIC_API_URL}`,
       },
     ],
   },
@@ -38,9 +38,10 @@ app.use('/api/utilizadores', utilizadorRoutes);
 app.use('/api/livros', livroRoutes);
 app.use('/api/compras', compraRoutes);
 
+const PORT = Number(process.env.PORT) || 8080;
 
 // inicia o servidor na porta 8080
-app.listen(8080, async () => {
-  console.log("Servidor rodando em http://localhost:8080");
+app.listen(PORT, async () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
   await inicializarBancoDeDados();
 });

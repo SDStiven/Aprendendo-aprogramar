@@ -12,7 +12,7 @@ const Login: React.FC = () => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:8080/api/utilizadores/login', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/utilizadores/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
