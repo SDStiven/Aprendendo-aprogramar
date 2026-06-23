@@ -1,17 +1,15 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "outDir": "dist",
+    "allowImportingTsExtensions": false,
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["node"],
-    "allowImportingTsExtensions": true,
-    "rewriteRelativeImportExtensions": true,
-    "noEmit": false
+    "types": ["node"]
   },
   "include": ["index.ts", "src/**/*"]
 }
