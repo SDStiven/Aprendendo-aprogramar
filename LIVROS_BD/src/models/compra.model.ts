@@ -1,5 +1,5 @@
-import db from '../lib/bd';
-import { Compra } from '../types';
+import db from '../lib/bd.js';
+import { Compra } from '../types.js';
 
 export const create = async (data: Omit<Compra, 'id' | 'data_compra' | 'updat'>) => {
     const result = await db.query(

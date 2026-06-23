@@ -1,5 +1,5 @@
-import db from '../lib/bd';
-import { Utilizador } from '../types';
+import db from '../lib/bd.js';
+import { Utilizador } from '../types.js';
 
 export const create = async (data: Omit<Utilizador, 'updat' | 'data_registo'>) => {
     const result = await db.query(
