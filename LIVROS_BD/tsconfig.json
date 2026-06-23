@@ -10,7 +10,8 @@
     "forceConsistentCasingInFileNames": true,
     "types": ["node"],
     "allowImportingTsExtensions": true,
-    "rewriteRelativeImportExtensions": true
+    "rewriteRelativeImportExtensions": true,
+    "noEmit": false
   },
   "include": ["index.ts", "src/**/*"]
 }
