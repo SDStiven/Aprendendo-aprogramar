@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
     setIsAuthenticated(!!user);
   }, [location.pathname]);
 
-  const links = ['Home', 'Livros', 'Sobre'];
+  const links = ['Home', 'Livros', 'Sobre', 'Api'];
   let link = '';
   if (isAuthenticated) {
     link = 'Perfil';

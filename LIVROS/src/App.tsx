@@ -9,6 +9,7 @@ import New_livro from './components/new-livro.tsx';
 import Login from './components/Login.tsx';
 import Cadastro from './components/Cadastro.tsx';
 import Perfil from './components/Perfil.tsx';
+import Api from './components/Api.tsx';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/perfil" element={<Perfil />} />
+            <Route path="/Api" element={<Api />} />
           </Routes>
         </main>
         <Footer />

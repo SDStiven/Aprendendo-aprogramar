@@ -14,7 +14,7 @@ export interface Livro {
   updat: Date;
 }
 
-const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/livros`;
+// const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api/livros`;   
 
 export default function New_livro() {
   const [livros, setLivros] = useState<Livro[]>([]);
