@@ -13,7 +13,7 @@ const Cadastro: React.FC = () => {
     setError('');
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/utilizadores`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/utilizadores`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

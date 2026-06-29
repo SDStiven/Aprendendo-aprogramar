@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Livros from './components/Livros.tsx'
 import Footer from './components/Footer.tsx'
 import Home from './components/Home.tsx';
-import New_livro from './components/new-livro.tsx';
+// import New_livro from './components/new-livro.tsx';
 import Login from './components/Login.tsx';
 import Cadastro from './components/Cadastro.tsx';
 import Perfil from './components/Perfil.tsx';
@@ -21,7 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/livros" element={<Livros />} />
             <Route path="/sobre" element={<Sobre />} />
-            <Route path="/new_livro" element={<New_livro />} />
+            {/* <Route path="/new_livro" element={<New_livro />} /> */}
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/perfil" element={<Perfil />} />
