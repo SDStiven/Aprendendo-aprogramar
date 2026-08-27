@@ -42,7 +42,7 @@ export default function Sobre() {
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
 
           {/* Left — About the author */}
-          <div className="animate-[fade-in-up_0.64s_ease_both]">
+          <div className=" animate-[fade-in-up_0.64s_ease_both]">
             <div className="inline-flex items-center gap-3 rounded-full border border-blue-600/30 bg-blue-600/5 px-5 py-2 mb-6">
               <span className="h-2 w-2 rounded-full bg-blue-600 animate-[pulse-soft_2s_ease-in-out_infinite]" />
               <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-blue-600 font-medium">O Autor</span>
@@ -92,7 +92,7 @@ export default function Sobre() {
               reutilizáveis e código limpo e tipado.
             </p>
             <h3 className="text-2xl font-bold tracking-tight text-slate-900 mb-4 pt-4">
-              Prosimo Atualização
+              Posiveis Atualizações
             </h3>
             <p className="text-base text-slate-500 leading-relaxed mb-4">
               - Login <br />
@@ -107,12 +107,25 @@ export default function Sobre() {
               - Filtrar livros <br />
               - Ordenar livros <br />
             </p>
-            <p>
-              Box de perquiza estara funcional.
-            </p>
-            <p>Formularios estaram funcionais.</p>
-
+            <div className='flex flex-col gap-4'>
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900 mb-4 pt-4">
+              Patch Notes
+            </h2> 
+            <div className="bg-slate-100 border border-slate-200 rounded-xl p-4">
+              <h3 className="text-2xl font-bold tracking-tight text-slate-900 mb-4 pt-4">
+              27/Agosto/2026
+              </h3>
+              <p>modo escuro</p>
+            </div>
+            <div className="bg-slate-100 border border-slate-200 rounded-xl p-4">
+              <h3 className="text-2xl font-bold tracking-tight text-slate-900 mb-4 pt-4">
+                23/May/2026
+              </h3>
+              <p> Website launched</p>
+            </div>
+            </div>
           </div>
+
 
           {/* Right — Tech stack + goals */}
           <div className="animate-[fade-in-up_0.64s_ease_0.1s_both]">

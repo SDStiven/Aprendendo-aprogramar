@@ -6,10 +6,10 @@ import Livros from './components/Livros.tsx'
 import Footer from './components/Footer.tsx'
 import Home from './components/Home.tsx';
 // import New_livro from './components/new-livro.tsx';
-import Login from './components/Login.tsx';
-import Cadastro from './components/Cadastro.tsx';
-import Perfil from './components/Perfil.tsx';
-import Api from './components/Api.tsx';
+import Login from '../thras/Login.tsx';
+import Cadastro from '../thras/Cadastro.tsx';
+import Perfil from '../thras/Perfil.tsx';
+import Api from '../thras/Api.tsx';
 
 function App() {
   return (

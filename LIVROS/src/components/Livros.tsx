@@ -213,8 +213,8 @@ export default function Livros() {
               id={`filter-${genre.toLowerCase().replace(/\s+/g, '-')}`}
               onClick={() => setActiveGenre(genre)}
               className={`h-9 px-4 rounded-lg border text-sm font-medium transition-all whitespace-nowrap flex-shrink-0 flex items-center
-                ${activeGenre === genre 
-                  ? 'border-blue-600 bg-blue-50 text-blue-600 shadow-sm font-semibold' 
+                ${activeGenre === genre
+                  ? 'border-blue-600 bg-blue-50 text-blue-600 shadow-sm font-semibold'
                   : 'border-slate-200 bg-transparent text-slate-500 hover:border-slate-400 hover:text-slate-900'
                 }`}
             >

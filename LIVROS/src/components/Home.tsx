@@ -180,7 +180,7 @@ function ContactSection() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('loading');
-    
+
     const form = e.currentTarget;
     const formData = new FormData(form);
     const email = formData.get('email') || '';
@@ -194,14 +194,14 @@ function ContactSection() {
     try {
       const response = await fetch(`https://formsubmit.co/ajax/${seuEmail}`, {
         method: "POST",
-        headers: { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify({
-            Email: email,
-            Telefone: phone,
-            Mensagem: message
+          Email: email,
+          Telefone: phone,
+          Mensagem: message
         })
       });
 
@@ -246,7 +246,7 @@ function ContactSection() {
               Ocorreu um erro ao enviar a mensagem. Tente novamente.
             </div>
           )}
-          
+
           <div>
             <label htmlFor="contact-email" className="block text-sm font-medium text-slate-900 mb-2">Email</label>
             <input

@@ -10,15 +10,9 @@ const Navbar: React.FC = () => {
     setIsAuthenticated(!!user);
   }, [location.pathname]);
 
-  const links = ['Home', 'Livros', 'Sobre', 'Api'];
-  let link = '';
-  if (isAuthenticated) {
-    link = 'Perfil';
-  } else {
-    link = 'Login';
-  }
+  const links = ['Home', 'Livros', 'Sobre'];
 
-  return ( 
+  return (
     <nav className="fixed top-0 left-0 w-full z-[1000] h-[72px] bg-white/80 backdrop-blur-xl border-b border-slate-200/80 shadow-sm px-8" aria-label="Navegação principal">
       <div className="max-w-5xl mx-auto h-full flex items-center justify-between gap-8">
 
@@ -90,18 +84,6 @@ const Navbar: React.FC = () => {
             </li>
           ))}
         </ul>
-        <div className="text-[#13a4ec] font-semibold p-2 rounded-sm ">
-          <NavLink to={link === 'Perfil' ? '/perfil' : '/login'}>
-            {link}
-          </NavLink>
-          {!  isAuthenticated && (
-            <NavLink to='/new_livro' 
-            className="text-[#13a4ec] font-semibold p-2 rounded-sm hover:underline">
-              New_livro
-            </NavLink>
-          )}
-
-        </div>
       </div>
     </nav>
   );
