@@ -10,6 +10,7 @@ import Login from '../thras/Login.tsx';
 import Cadastro from '../thras/Cadastro.tsx';
 import Perfil from '../thras/Perfil.tsx';
 import Api from '../thras/Api.tsx';
+import ModoLeitor from './components/ModoLeito.tsx';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/perfil" element={<Perfil />} />
             <Route path="/Api" element={<Api />} />
+            <Route path="/ModoLeitor" element={<ModoLeitor />} />
           </Routes>
         </main>
         <Footer />

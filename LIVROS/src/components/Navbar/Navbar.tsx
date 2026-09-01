@@ -1,16 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-const Navbar: React.FC = () => {
-  const location = useLocation();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  useEffect(() => {
-    const user = localStorage.getItem('user');
-    setIsAuthenticated(!!user);
-  }, [location.pathname]);
-
-  const links = ['Home', 'Livros', 'Sobre'];
+const Navbar = () => {
+  const links = ['Home', 'Livros', 'Sobre', "ModoLeitor"];
 
   return (
     <nav className="fixed top-0 left-0 w-full z-[1000] h-[72px] bg-white/80 backdrop-blur-xl border-b border-slate-200/80 shadow-sm px-8" aria-label="Navegação principal">
@@ -35,37 +26,6 @@ const Navbar: React.FC = () => {
           </svg>
           <span className="hidden sm:block font-display text-lg tracking-tight">Livros</span>
         </NavLink>
-
-        {/* Search */}
-        {/* <div className="hidden md:block flex-1 max-w-sm">
-          <div className="relative flex items-center group">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="absolute left-3.5 text-slate-400 pointer-events-none group-focus-within:text-blue-600 transition-colors"
-              aria-hidden="true"
-            >
-              <circle cx="11" cy="11" r="8" />
-              <path d="m21 21-4.3-4.3" />
-            </svg>
-            <input
-              id="navbar-search"
-              type="text"
-              placeholder="Pesquisar livros..."
-              className="w-full h-10 pl-10 pr-4 bg-slate-100/60 focus:bg-white border border-slate-200 rounded-xl text-sm text-slate-900 outline-none transition-all focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10"
-              aria-label="Pesquisar livros"
-            />
-          </div>
-        </div> */}
-
-        {/* Links */}
         <ul className="flex items-center gap-1 list-none p-0 m-0" role="list">
           {links.map((label) => (
             <li key={label}>

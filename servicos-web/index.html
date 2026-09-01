@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo de Serviços consumindo API REST com paginação e busca">
+  <title>Catálogo de Serviços | API Rest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Phosphor Icons para ícones modernos -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="app-header">
+    <div class="container header-container">
+      <div class="brand">
+        <div class="brand-icon">
+          <i class="ph-bold ph-squares-four"></i>
+        </div>
+        <div>
+          <h1>Catálogo de Serviços</h1>
+          <p class="subtitle">Gerenciamento e Consulta da API de Serviços</p>
+        </div>
+      </div>
+      <div class="api-status" id="api-status-badge">
+        <span class="status-dot"></span>
+        <span id="api-status-text">Verificando API...</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container main-content">
+    
+    <!-- Controls Bar (Filtros, Busca, Configurações) -->
+    <section class="controls-card">
+      <div class="search-box">
+        <i class="ph ph-magnifying-glass"></i>
+        <input 
+          type="text" 
+          id="search-input" 
+          placeholder="Filtrar por título ou descrição..." 
+          autocomplete="off"
+        >
+        <button id="clear-search-btn" class="clear-btn" title="Limpar busca" style="display: none;">
+          <i class="ph ph-x"></i>
+        </button>
+      </div>
+
+      <div class="filters-group">
+        <div class="filter-item">
+          <label for="status-filter"><i class="ph ph-funnel"></i> Status:</label>
+          <select id="status-filter">
+            <option value="all">Todos</option>
+            <option value="active">Ativos</option>
+            <option value="inactive">Inativos</option>
+          </select>
+        </div>
+
+        <div class="filter-item">
+          <label for="page-size"><i class="ph ph-rows"></i> Itens/Pág:</label>
+          <select id="page-size">
+            <option value="6">6</option>
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+          </select>
+        </div>
+
+        <button id="refresh-btn" class="btn btn-secondary" title="Recarregar dados">
+          <i class="ph ph-arrows-clockwise"></i>
+          <span>Atualizar</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Info Stats Bar -->
+    <section class="stats-bar" id="stats-bar">
+      <div class="stat-item">
+        <span class="stat-label">Total Cadastrado:</span>
+        <strong id="total-elements-stat">0</strong>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Exibindo nesta página:</span>
+        <strong id="current-page-count">0</strong>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Endpoint:</span>
+        <code class="endpoint-code" id="endpoint-display">/api/v1/servicos</code>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-grid" id="services-grid">
+      <!-- Cards serão renderizados dinamicamente pelo JavaScript -->
+    </section>
+
+    <!-- State: Loading Skeleton -->
+    <div id="loading-state" class="loading-grid">
+      <div class="skeleton-card">
+        <div class="skeleton skeleton-img"></div>
+        <div class="skeleton skeleton-title"></div>
+        <div class="skeleton skeleton-text"></div>
+        <div class="skeleton skeleton-footer"></div>
+      </div>
+      <div class="skeleton-card">
+        <div class="skeleton skeleton-img"></div>
+        <div class="skeleton skeleton-title"></div>
+        <div class="skeleton skeleton-text"></div>
+        <div class="skeleton skeleton-footer"></div>
+      </div>
+      <div class="skeleton-card">
+        <div class="skeleton skeleton-img"></div>
+        <div class="skeleton skeleton-title"></div>
+        <div class="skeleton skeleton-text"></div>
+        <div class="skeleton skeleton-footer"></div>
+      </div>
+    </div>
+
+    <!-- State: Empty -->
+    <div id="empty-state" class="state-container" style="display: none;">
+      <div class="state-icon">
+        <i class="ph ph-folder-open"></i>
+      </div>
+      <h3>Nenhum serviço encontrado</h3>
+      <p>Não há serviços correspondentes aos filtros selecionados ou a página está vazia.</p>
+    </div>
+
+    <!-- State: Error -->
+    <div id="error-state" class="state-container error" style="display: none;">
+      <div class="state-icon">
+        <i class="ph ph-warning-circle"></i>
+      </div>
+      <h3>Falha ao carregar serviços</h3>
+      <p id="error-message">Não foi possível conectar com o servidor no momento.</p>
+      <button id="retry-btn" class="btn btn-primary">
+        <i class="ph ph-arrow-clockwise"></i> Tentar Novamente
+      </button>
+    </div>
+
+    <!-- Pagination Controls -->
+    <section class="pagination-wrapper" id="pagination-wrapper" style="display: none;">
+      <div class="pagination-info" id="pagination-info">
+        Página <span id="current-page-display">1</span> de <span id="total-pages-display">1</span>
+      </div>
+
+      <div class="pagination-controls">
+        <button id="first-page-btn" class="btn-page" title="Primeira página">
+          <i class="ph ph-caret-double-left"></i>
+        </button>
+        <button id="prev-page-btn" class="btn-page" title="Página anterior">
+          <i class="ph ph-caret-left"></i> Anterior
+        </button>
+        
+        <div id="pagination-numbers" class="pagination-numbers">
+          <!-- Números de páginas serão gerados aqui -->
+        </div>
+
+        <button id="next-page-btn" class="btn-page" title="Próxima página">
+          Próxima <i class="ph ph-caret-right"></i>
+        </button>
+        <button id="last-page-btn" class="btn-page" title="Última página">
+          <i class="ph ph-caret-double-right"></i>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal Detalhes do Serviço -->
+  <div id="details-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-title">Detalhes do Serviço</h3>
+        <button id="modal-close-btn" class="modal-close"><i class="ph ph-x"></i></button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <!-- Conteúdo do modal preenchido via JS -->
+      </div>
+      <div class="modal-footer">
+        <button id="modal-ok-btn" class="btn btn-primary">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

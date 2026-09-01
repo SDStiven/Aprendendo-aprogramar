@@ -97,15 +97,6 @@ export default function Sobre() {
             <p className="text-base text-slate-500 leading-relaxed mb-4">
               - Login <br />
               - Cadastro <br />
-              - Recuperação de senha <br />
-              - Adicionar livros <br />
-              - Editar livros <br />
-              - Excluir livros <br />
-              - Listar livros <br />
-              - Detalhes do livro <br />
-              - Pesquisar livros <br />
-              - Filtrar livros <br />
-              - Ordenar livros <br />
             </p>
             <div className='flex flex-col gap-4'>
             <h2 className="text-2xl font-bold tracking-tight text-slate-900 mb-4 pt-4">
