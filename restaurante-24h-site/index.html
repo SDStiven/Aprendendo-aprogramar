@@ -1,72 +1,147 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Restaurante 24h Praia | Buffet aberto 24 horas, Cabo Verde</title>
-<meta name="description" content="Restaurante self-service na Praia, Cabo Verde. Buffet com opções vegetarianas, veganas, carne e sushi, aberto 24 horas por dia, a preços acessíveis.">
-<meta property="og:title" content="Restaurante 24h Praia">
-<meta property="og:description" content="Buffet aberto 24 horas na Praia, Cabo Verde.">
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Restaurante 24h Praia | Buffet aberto 24 horas, Cabo Verde</title>
+  <meta name="description"
+    content="Restaurante self-service na Praia, Cabo Verde. Buffet com opções vegetarianas, veganas, carne e sushi, aberto 24 horas por dia, a preços acessíveis.">
+  <meta property="og:title" content="Restaurante 24h Praia">
+  <meta property="og:description" content="Buffet aberto 24 horas na Praia, Cabo Verde.">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header class="hero" id="inicio">
-  <div class="wm still" data-logo aria-hidden="true"></div>
-  <nav aria-label="Principal"><span class="brand still" data-logo role="img" aria-label="24 Hora"></span>
-    <span><a href="#sobre" data-en="About">Sobre</a><a href="#buffet" data-en="Buffet">Buffet</a><a href="#opinioes" data-en="Reviews">Opiniões</a><a href="#onde" data-en="Find us">Onde</a><button id="lang" data-l="pt" aria-label="Mudar idioma / Change language"><span class="p">PT</span> / <span class="e">EN</span></button></span></nav>
-  <div class="copy">
-    <h1 data-en="Eat whenever you're hungry.">Come quando tiveres fome.</h1>
-    <p data-en="Self-service restaurant in Praia, open 24 hours a day. A buffet with meat, vegetarian and vegan dishes, and sushi.">Restaurante self-service na Praia, aberto 24 horas por dia. Buffet com pratos de carne, vegetarianos e veganos, e sushi.</p>
-    <div class="now"><i class="dot"></i><span id="hora"></span></div>
-    <div class="cta"><a class="btn" id="wa" href="#" data-en="Talk to us on WhatsApp">Fala connosco no WhatsApp</a><a class="btn ghost" href="#buffet" data-en="See the buffet">Ver o buffet</a></div>
-  </div>
-  <div class="cluster">
-    <div class="c c1" data-d="16"><img src="images/hero-saladas.jpg" alt="Saladas e fruta no buffet"></div>
-    <div class="c c2" data-d="30"><img src="images/hero-fruta.jpg" alt="Fruta fresca no buffet"></div>
-    <div class="c c3" data-d="22" data-logo role="img" aria-label="Logótipo 24 Hora"></div>
-  </div>
-  <div class="day" aria-hidden="true"><div class="track"><span class="pin" id="pin"></span></div><div class="ticks"><span>00h</span><span>06h</span><span>12h</span><span>18h</span><span>24h</span></div><small data-en="Open every hour of the day">Aberto a todas as horas do dia</small></div>
-</header>
-<main>
-<section id="sobre"><div class="wrap two">
-  <div><h2 data-en="A restaurant that never closes">Um restaurante que nunca fecha</h2>
-  <p data-en="Restaurante 24h is a self-service restaurant in Praia, Cape Verde. You serve yourself at your own pace and pick what you like from the buffet.">O Restaurante 24h é um restaurante self-service na Praia, Cabo Verde. Serves-te ao teu ritmo e escolhes o que queres do buffet.</p>
-  <p data-en="It is open 24 hours a day, so there is always a meal waiting. There are dishes for meat eaters, vegetarians and vegans, and the buffet includes sushi. It is known for its affordable prices, and the dining room is air-conditioned.">Está aberto 24 horas por dia, por isso há sempre uma refeição à tua espera. Tem pratos para quem come carne, para vegetarianos e para veganos, e o buffet inclui sushi. É conhecido pelos preços acessíveis, e o salão é climatizado.</p></div>
-  <div class="pic"><img src="images/interior.jpg" alt="Interior do restaurante, com ar condicionado e mesas"></div>
-</div></section>
-<section class="menu" id="buffet"><div class="wrap">
-  <h2 data-en="What you will find at the buffet">O que encontras no buffet</h2>
-  <div class="strip"><img src="images/buffet.jpg" alt="Pratos quentes e arroz no buffet, com as etiquetas dos pratos"></div>
-  <ul>
-    <li><b data-en="Vegetarian">Vegetariano</b><span data-en="Dishes without meat or fish">Pratos sem carne nem peixe</span></li>
-    <li><b data-en="Vegan">Vegano</b><span data-en="100% plant-based options">Opções de origem 100% vegetal</span></li>
-    <li><b data-en="Meat">Carne</b><span data-en="Hot meat dishes">Pratos quentes de carne</span></li>
-    <li><b>Sushi</b><span data-en="Part of the buffet">Faz parte do buffet</span></li>
-  </ul>
-</div></section>
-<section id="opinioes"><div class="wrap">
-  <h2 data-en="What customers say">O que dizem os clientes</h2>
-  <div class="quotes">
-    <blockquote><p>Ambiente agradável e atendimento nota 10. Os funcionários são todos atenciosos. É um dos melhores restaurantes cá na Cidade da Praia.</p><cite>Darcelene M.</cite></blockquote>
-    <blockquote><p>Super recomendo restaurante muito bom, boas comidas, climatizado, e também dispõe de serviço de entrega.</p><cite>Samori G.</cite></blockquote>
-    <blockquote><p>Simplesmente perfeito! Ideal para tomar o café da manhã antes das 8h: café excelente, atendimento eficiente e agradável.</p><cite>Damien H. <small data-en="translated by Google">traduzido pelo Google</small></cite></blockquote>
-  </div>
-  <a class="btn dark" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Restaurante+24h/@14.9091439,-23.5193763,17z/data=!3m1!4b1!4m6!3m5!1s0x93599c5a4616a61:0x4ffc5cbe16ffea3!8m2!3d14.9091439!4d-23.5193763!16s%2Fg%2F11y7ydtr27" data-en="See reviews on Google">Ver avaliações no Google</a>
-</div></section>
-<section class="band" id="onde"><div class="wrap">
-  <div class="big">24h</div>
-  <h2 data-en="Come by whenever suits you">Passa quando te der jeito</h2>
-  <p data-en="Praia, Cape Verde. The door is open and the buffet is ready.">Praia, Cabo Verde. A porta está aberta e o buffet está pronto.</p>
-  <a class="btn dark" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Restaurante+24h/@14.9091439,-23.5193763,17z/data=!3m1!4b1!4m6!3m5!1s0x93599c5a4616a61:0x4ffc5cbe16ffea3!8m2!3d14.9091439!4d-23.5193763!16s%2Fg%2F11y7ydtr27" data-en="Get directions">Como chegar</a>
-</div></section>
-</main>
-<footer><span>Restaurante 24h · Praia, Cabo Verde</span>
-  <span class="soc">
-    <a id="fb" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.800 0-4 1.800-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.500c0-.300.200-.500.500-.500z"/></svg></a>
-    <a id="ig" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.500" cy="6.500" r="1" fill="currentColor"/></svg></a>
-    <a id="wb" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 4.600 16.700L21 21l-1.300-4.400A9 9 0 0 0 12 3z"/><path d="M9 8c0 4 3 7 7 7l1-2-2-1-1 1c-1-.4-2.200-1.600-2.600-2.600l1-1z" fill="currentColor" stroke="none"/></svg></a>
-  </span></footer>
-<script src="script.js"></script>
+  <header class="hero" id="inicio">
+    <div class="wm still" data-logo aria-hidden="true"></div>
+    <nav class="main-nav" aria-label="Principal"><span class="brand still" data-logo role="img" aria-label="24 Hora"></span>
+      <span><a href="#sobre" data-en="About">Sobre</a><a href="#buffet" data-en="Buffet">Buffet</a><a href="#opinioes"
+          data-en="Reviews">Opiniões</a><a href="#onde" data-en="Find us">Onde</a><button id="lang" data-l="pt"
+          aria-label="Mudar idioma / Change language"><span class="p">PT</span> / <span
+            class="e">EN</span></button></span>
+    </nav>
+    <div class="copy">
+      <h1 data-en="Eat whenever you're hungry.">Come quando tiveres fome.</h1>
+      <p
+        data-en="Self-service restaurant in Praia, open 24 hours a day. A buffet with meat, vegetarian and vegan dishes, and sushi.">
+        Restaurante self-service na Praia, aberto 24 horas por dia. Buffet com pratos de carne, vegetarianos e veganos,
+        e sushi.</p>
+      <div class="now"><i class="dot"></i><span id="hora"></span></div>
+      <div class="cta"><a class="btn" id="wa" href="#" data-en="Talk to us on WhatsApp">Fala connosco no WhatsApp</a><a
+          class="btn ghost" href="#buffet" data-en="See the buffet">Ver o buffet</a></div>
+    </div>
+    <div class="cluster">
+      <div class="c c1" data-d="16"><img src="images/hero-saladas.jpg" alt="Saladas e fruta no buffet"></div>
+      <div class="c c2" data-d="30"><img src="images/hero-fruta.jpg" alt="Fruta fresca no buffet"></div>
+      <div class="c c3" data-d="22" data-logo role="img" aria-label="Logótipo 24 Hora"></div>
+    </div>
+    <div class="day" aria-hidden="true">
+      <div class="track"><span class="pin" id="pin"></span></div>
+      <div class="ticks"><span>00h</span><span>06h</span><span>12h</span><span>18h</span><span>24h</span></div><small
+        data-en="Open every hour of the day">Aberto a todas as horas do dia</small>
+    </div>
+  </header>
+  <main>
+    <section id="sobre">
+      <div class="wrap two">
+        <div>
+          <h2 data-en="A restaurant that never closes">Um restaurante que nunca fecha</h2>
+          <p
+            data-en="Restaurante 24h is a self-service restaurant in Praia, Cape Verde. You serve yourself at your own pace and pick what you like from the buffet.">
+            O Restaurante 24h é um restaurante self-service na Praia, Cabo Verde. Serves-te ao teu ritmo e escolhes o
+            que queres do buffet.</p>
+          <p
+            data-en="It is open 24 hours a day, so there is always a meal waiting. There are dishes for meat eaters, vegetarians and vegans, and the buffet includes sushi. It is known for its affordable prices, and the dining room is air-conditioned.">
+            Está aberto 24 horas por dia, por isso há sempre uma refeição à tua espera. Tem pratos para quem come carne,
+            para vegetarianos e para veganos, e o buffet inclui sushi. É conhecido pelos preços acessíveis, e o salão é
+            climatizado.</p>
+        </div>
+        <div class="pic"><img src="images/interior.jpg" alt="Interior do restaurante, com ar condicionado e mesas">
+        </div>
+      </div>
+    </section>
+    <section class="menu" id="buffet">
+      <div class="wrap">
+        <h2 data-en="What you will find at the buffet">O que encontras no buffet</h2>
+        <div class="strip"><img src="images/buffet.jpg"
+            alt="Pratos quentes e arroz no buffet, com as etiquetas dos pratos"></div>
+        <ul>
+          <li><b data-en="Vegetarian">Vegetariano</b><span data-en="Dishes without meat or fish">Pratos sem carne nem
+              peixe</span></li>
+          <li><b data-en="Vegan">Vegano</b><span data-en="100% plant-based options">Opções de origem 100% vegetal</span>
+          </li>
+          <li><b data-en="Meat">Carne</b><span data-en="Hot meat dishes">Pratos quentes de carne</span></li>
+          <li><b>Sushi</b><span data-en="Part of the buffet">Faz parte do buffet</span></li>
+        </ul>
+      </div>
+    </section>
+    <section id="opinioes">
+      <div class="wrap">
+        <h2 data-en="What customers say">O que dizem os clientes</h2>
+        <div class="quotes">
+          <blockquote>
+            <p>Ambiente agradável e atendimento nota 10. Os funcionários são todos atenciosos. É um dos melhores
+              restaurantes cá na Cidade da Praia.</p><cite>Darcelene M.</cite>
+          </blockquote>
+          <blockquote>
+            <p>Super recomendo restaurante muito bom, boas comidas, climatizado, e também dispõe de serviço de entrega.
+            </p><cite>Samori G.</cite>
+          </blockquote>
+          <blockquote>
+            <p>Simplesmente perfeito! Ideal para tomar o café da manhã antes das 8h: café excelente, atendimento
+              eficiente e agradável.</p><cite>Damien H. <small data-en="translated by Google">traduzido pelo
+                Google</small></cite>
+          </blockquote>
+        </div>
+        <a class="btn dark" target="_blank" rel="noopener"
+          href="https://www.google.com/maps/place/Restaurante+24h/@14.9091439,-23.5193763,17z/data=!3m1!4b1!4m6!3m5!1s0x93599c5a4616a61:0x4ffc5cbe16ffea3!8m2!3d14.9091439!4d-23.5193763!16s%2Fg%2F11y7ydtr27"
+          data-en="See reviews on Google">Ver avaliações no Google</a>
+      </div>
+    </section>
+    <section class="band" id="onde">
+      <div class="wrap">
+        <div class="big">24h</div>
+        <h2 data-en="Come by whenever suits you">Passa quando te der jeito</h2>
+        <p data-en="Praia, Cape Verde. The door is open and the buffet is ready.">Praia, Cabo Verde. A porta está aberta
+          e o buffet está pronto.</p>
+        <a class="btn dark" target="_blank" rel="noopener"
+          href="https://www.google.com/maps/place/Restaurante+24h/@14.9091439,-23.5193763,17z/data=!3m1!4b1!4m6!3m5!1s0x93599c5a4616a61:0x4ffc5cbe16ffea3!8m2!3d14.9091439!4d-23.5193763!16s%2Fg%2F11y7ydtr27"
+          data-en="Get directions">Como chegar</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-top">
+      <nav class="footer-nav" aria-label="Navegação secundária">
+        <a href="#inicio" data-en="Home">Início</a>
+        <a href="#sobre" data-en="About">Sobre</a>
+        <a href="#buffet" data-en="Buffet">Buffet</a>
+        <a href="#opinioes" data-en="Reviews">Opiniões</a>
+        <a href="#onde" data-en="Find us">Onde</a>
+      </nav>
+      <span class="soc">
+        <a id="fb" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M14 8h3V4h-3c-2.800 0-4 1.800-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.500c0-.300.200-.500.500-.500z" />
+          </svg></a>
+        <a id="ig" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.500" cy="6.500" r="1" fill="currentColor" />
+          </svg></a>
+        <a id="wb" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linejoin="round">
+            <path d="M12 3a9 9 0 1 0 4.600 16.700L21 21l-1.300-4.400A9 9 0 0 0 12 3z" />
+            <path d="M9 8c0 4 3 7 7 7l1-2-2-1-1 1c-1-.4-2.200-1.600-2.600-2.600l1-1z" fill="currentColor" stroke="none" />
+          </svg></a>
+      </span>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Restaurante 24h · Praia, Cabo Verde. <span data-en="All rights reserved.">Todos os direitos reservados.</span></p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
 </body>
+
 </html>
