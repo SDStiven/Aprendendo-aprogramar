@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Touro Steakhouse Premium | Praia, Cabo Verde</title>
+  <meta name="description"
+    content="Steakhouse premium na Praia, Cabo Verde: carnes grelhadas de alta qualidade, seleção de vinhos, pratos de marisco e opções vegetarianas.">
+  <meta property="og:title" content="Touro Steakhouse Premium">
+  <meta property="og:description"
+    content="Steakhouse premium na Praia, Cabo Verde: carnes grelhadas de alta qualidade, seleção de vinhos, pratos de marisco e opções vegetarianas.">
+  <!-- Tipo de letra: por defeito usa a fonte do sistema. Para usar outra, adiciona aqui o link da fonte e muda --font em style.css -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ===== INÍCIO (hero) ===== -->
+  <header class="hero" id="inicio">
+    <div class="wm still" data-logo aria-hidden="true"></div>
+
+    <!-- Cabeçalho e navegação -->
+    <nav class="main-nav" aria-label="Principal">
+      <a href="#inicio" class="brand" aria-label="Touro Steakhouse">
+        <span class="brand-logo still" data-logo role="img" aria-label="Logo Touro"></span>
+        <span class="brand-text">TOURO</span>
+      </a>
+      <span>
+        <a href="#sobre" data-en="About">Sobre</a>
+        <a href="#catalogo" data-en="Menu">Menu</a>
+        <a href="#opinioes" data-en="Reviews">Opiniões</a>
+        <a href="#contacto" data-en="Contact">Contacto</a>
+        <button id="lang" data-l="pt" aria-label="Mudar idioma / Change language"><span class="p">PT</span> / <span
+            class="e">EN</span></button>
+      </span>
+    </nav>
+
+    <!-- Texto de abertura -->
+    <div class="copy">
+      <h1 data-en="Premium Steakhouse">Steakhouse Premium</h1>
+      <p data-en="Grilled high-quality meats, a wine selection and an elegant atmosphere">Carnes grelhadas de alta
+        qualidade, seleção de vinhos e ambiente elegante</p>
+      <div class="now" hidden><i class="dot"></i><span id="hora"></span></div>
+      <div class="cta">
+        <a class="btn" data-link="whatsapp" href="#" data-en="Book now">Reservar agora</a>
+        <a class="btn ghost" href="#catalogo" data-en="View menu">Ver menu</a>
+      </div>
+    </div>
+
+    <!-- Composição visual: 2 círculos de foto + 1 selo com o logótipo -->
+    <div class="cluster">
+      <div class="c c1" data-d="16"><img src="images/hero-carne.jpg" alt="Corte de carne grelhado com alho"></div>
+      <div class="c c2" data-d="30"><img src="images/hero-ostras.jpg" alt="Ostras gratinadas com malagueta"></div>
+      <div class="c c3" data-d="22" data-logo role="img" aria-label="Logótipo Touro"></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== SOBRE: texto + imagem em arco ===== -->
+    <section id="sobre">
+      <div class="wrap two">
+        <div>
+          <h2 data-en="About Touro">Sobre o Touro</h2>
+          <p
+            data-en="Premium steakhouse specializing in high-quality grilled meats, with a wine selection and a few seafood dishes, in an elegant and welcoming setting.">
+            Steakhouse premium especializado em carnes grelhadas de alta qualidade, com uma seleção de vinhos e alguns
+            pratos de marisco, num ambiente elegante e acolhedor.</p>
+          <p
+            data-en="Perfect for celebrations, business meetings or simply enjoying an excellent meal with the best meats and wines.">
+            Perfeito para celebrações, reuniões de negócios ou simplesmente desfrutar de uma excelente refeição com as
+            melhores carnes e vinhos.</p>
+        </div>
+        <div class="pic"><img src="images/fachada.jpg" alt="Entrada do restaurante Touro, Restaurant &amp; Lounge">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CATÁLOGO: imagem larga + lista de itens ===== -->
+    <section class="catalog" id="catalogo">
+      <div class="wrap">
+        <h2 data-en="Our specialties">Nossas especialidades</h2>
+        <div class="strip"><img src="images/hero-carne.jpg" alt="Corte de carne grelhado com alho"></div>
+        <div class="tabs" role="tablist"><button class="on" data-t="food" data-en="Food">Comida</button><button
+            data-t="drinks" data-en="Drinks">Bebidas</button></div>
+        <div class="groups" id="tab-food">
+          <details class="grp" name="menu">
+            <summary><b data-en="Soups and Salads">Sopas e Saladas</b></summary>
+            <ul class="dishes">
+              <li><span>Sopa de legumes</span><b>490 CVE</b></li>
+              <li><span>Bisque de camarão</span><b>650 CVE</b></li>
+              <li><span>Bisque de lagosta</span><b>950 CVE</b></li>
+              <li><span>Salada c/ queijo parmesão</span><b>Média 650 · Grande 950 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Appetizers">Aperitivos</b></summary>
+            <ul class="dishes">
+              <li><span>Asas picantes</span><b>650 CVE</b></li>
+              <li><span>Nuggets de frango BBQ</span><b>590 CVE</b></li>
+              <li><span>Trio salgados 6 uni (camarão, carne, bacalhau)</span><b>890 CVE</b></li>
+              <li><span>Chouriço à bombeiro</span><b>850 CVE</b></li>
+              <li><span>Pastel chinês na frigideira</span><b>650 CVE</b></li>
+              <li><span>Camarão salteado em azeite virgem e alho</span><b>1.450 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Seafood Dishes">Pratos de Marisco</b><span class="d"
+                data-en="Fresh, tasty options">Opções frescas e saborosas</span></summary>
+            <ul class="dishes">
+              <li><span>Atum ou peixe do dia grelhado com molho de camarão</span><b>1.590 CVE</b></li>
+              <li><span>Polvo à lagareiro</span><b>1.950 CVE</b></li>
+              <li><span>Arroz de tamboril c/ camarão e amêijoas (2 pessoas)</span><b>2.990 CVE</b></li>
+              <li><span>Arroz malandrinho de polvo e camarão</span><b>1.600 CVE</b></li>
+              <li><span>Arroz oriental de marisco (2 pessoas)</span><b>3.900 CVE</b></li>
+              <li><span>Filetes de garoupa branca na grelha</span><b>1.490 CVE</b></li>
+              <li><span>Dourada grelhada</span><b>Regular 1.290 · Média 1.590 · Grande 1.990 CVE</b></li>
+              <li><span>Lulas à lagareiro</span><b>1.490 CVE</b></li>
+              <li><span>Gambas à plancha</span><b>2.490 CVE</b></li>
+              <li><span>Linguado grelhado</span><b>a partir de 1.490 CVE</b></li>
+              <li><span>Rabo de lagosta béarnaise</span><b>2.990 CVE</b></li>
+              <li><span>Chocos na caçarola</span><b>1.590 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Pasta">Massas</b></summary>
+            <ul class="dishes">
+              <li><span>Pasta c/ gambas, alcaparras, tomate e azeite virgem</span><b>1.950 CVE</b></li>
+              <li><span>Pasta em creme de bisque de lagosta</span><b>2.490 CVE</b></li>
+              <li><span>Alfredo de frango c/ brócolis</span><b>1.490 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Grilled Meats">Carnes Grelhadas</b><span class="d"
+                data-en="Premium cuts grilled to perfection">Cortes premium grelhados na perfeição</span></summary>
+            <ul class="dishes">
+              <li><span>Hambúrguer bacon cheddar</span><b>950 CVE</b></li>
+              <li><span>Frango no churrasco</span><b>950 CVE</b></li>
+              <li><span>Bitoque</span><b>1.200 CVE</b></li>
+              <li><span>Bifé à portuguesa (filet mignon)</span><b>1.590 CVE</b></li>
+              <li><span>NY Strip Cervejaria</span><b>1.800 CVE</b></li>
+              <li><span>Filé mignon com molho de pimenta</span><b>2.200 CVE</b></li>
+              <li><span>Filé mignon de porco au poivre</span><b>1.490 CVE</b></li>
+              <li><span>Picanha Angus</span><b>1.990 CVE</b></li>
+              <li><span>Ribeye Angus béarnaise</span><b>2.990 CVE</b></li>
+              <li><span>Ribeye &amp; lobster tail</span><b>4.500 CVE</b></li>
+              <li><span>Tomahawk</span><b>10.000 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Vegetarian Options">Opções Vegetarianas</b><span class="d"
+                data-en="For every taste and diet">Para todos os gostos e regimes</span></summary>
+            <ul class="dishes">
+              <li><span>Caril de grão c/ arroz branco</span><b>850 CVE</b></li>
+              <li><span>Chilli de feijão c/ arroz branco</span><b>850 CVE</b></li>
+              <li><span>Bolonhesa de lentilhas</span><b>850 CVE</b></li>
+              <li><span>Arroz oriental de tofu</span><b>950 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Desserts">Sobremesas</b></summary>
+            <ul class="dishes">
+              <li><span>Bolo de bolacha</span><b>450 CVE</b></li>
+              <li><span>Pudim de leite</span><b>450 CVE</b></li>
+              <li><span>Brownie com gelado</span><b>590 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Extras and Sides">Extras e Acompanhamentos</b></summary>
+            <ul class="dishes">
+              <li><span>Batata frita terra</span><b>390 CVE</b></li>
+              <li><span>Arroz oriental</span><b>650 CVE</b></li>
+              <li><span>Legumes grelhados</span><b>590 CVE</b></li>
+              <li><span>Arroz branco</span><b>250 CVE</b></li>
+              <li><span>Arroz dourado</span><b>350 CVE</b></li>
+              <li><span>Molho</span><b>190 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Pizzas">Pizzas</b></summary>
+            <ul class="dishes">
+              <li><span><span data-en="Choose your ingredients">Escolha os seus ingredientes</span></span></li>
+            </ul>
+          </details>
+          <div class="grp static" data-goto="drinks" role="button" tabindex="0"><b data-en="Wine Selection">Seleção de
+              Vinhos</b><span class="d" data-en="Hand-picked wines to match">Vinhos escolhidos a dedo para
+              acompanhar</span></div>
+        </div>
+        <div class="groups" id="tab-drinks" hidden>
+          <details class="grp" name="menu">
+            <summary><b data-en="Cocktails">Cocktails</b></summary>
+            <ul class="dishes">
+              <li><span>Caipirinha</span><b>600 CVE</b></li>
+              <li><span>Caipiroska</span><b>600 CVE</b></li>
+              <li><span>Caipiblack</span><b>600 CVE</b></li>
+              <li><span>Caipila</span><b>600 CVE</b></li>
+              <li><span>Caipifari</span><b>600 CVE</b></li>
+              <li><span>Morangoska</span><b>600 CVE</b></li>
+              <li><span>Maracujão</span><b>600 CVE</b></li>
+              <li><span>Margarita</span><b>600 CVE</b></li>
+              <li><span>Mojito</span><b>600 CVE</b></li>
+              <li><span>Piña Colada</span><b>600 CVE</b></li>
+              <li><span>Sex on the Beach</span><b>600 CVE</b></li>
+              <li><span>Summer Daiquiri</span><b>850 CVE</b></li>
+              <li><span>Strawberry Daiquiri</span><b>600 CVE</b></li>
+              <li><span>Blue Lagoon</span><b>600 CVE</b></li>
+              <li><span>Strawberry Margarita</span><b>600 CVE</b></li>
+              <li><span>Mango Margarita</span><b>600 CVE</b></li>
+              <li><span>Screwdriver</span><b>600 CVE</b></li>
+              <li><span>Tequila Sunrise</span><b>600 CVE</b></li>
+              <li><span>Long Island Ice Tea</span><b>850 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Scotch">Scotch</b></summary>
+            <ul class="dishes">
+              <li><span>Johnnie Walker Red Label</span><b>550 CVE</b></li>
+              <li><span>Johnnie Walker Black Label</span><b>800 CVE</b></li>
+              <li><span>Johnnie Walker Double Black</span><b>800 CVE</b></li>
+              <li><span>Johnnie Walker Green 15</span><b>950 CVE</b></li>
+              <li><span>Johnnie Walker 18 Gold</span><b>1.000 CVE</b></li>
+              <li><span>Johnnie Walker Swing</span><b>1.000 CVE</b></li>
+              <li><span>Johnnie Walker Explorer</span><b>1.200 CVE</b></li>
+              <li><span>Johnnie Walker Platinum 18</span><b>1.400 CVE</b></li>
+              <li><span>Johnnie Walker Blue Label</span><b>1.600 CVE</b></li>
+              <li><span>J&amp;B</span><b>600 CVE</b></li>
+              <li><span>Logan</span><b>750 CVE</b></li>
+              <li><span>Jameson Black</span><b>900 CVE</b></li>
+              <li><span>Jameson</span><b>700 CVE</b></li>
+              <li><span>Grants</span><b>500 CVE</b></li>
+              <li><span>Jack Daniels</span><b>800 CVE</b></li>
+              <li><span>Chivas</span><b>800 CVE</b></li>
+              <li><span>Chivas 21</span><b>1.500 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Rum">Rum</b></summary>
+            <ul class="dishes">
+              <li><span>Havana Club Especial</span><b>500 CVE</b></li>
+              <li><span>Havana Club Reserva</span><b>500 CVE</b></li>
+              <li><span>Havana Club 7 Años</span><b>600 CVE</b></li>
+              <li><span>Malibu</span><b>500 CVE</b></li>
+              <li><span>Rum Captain Morgan</span></li>
+              <li><span>Rum de Casa</span><b>400 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Malt">Malt</b></summary>
+            <ul class="dishes">
+              <li><span>Cardhu 12</span><b>1.200 CVE</b></li>
+              <li><span>Bushmills 1608</span><b>900 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Vodka">Vodka</b></summary>
+            <ul class="dishes">
+              <li><span>Ciroc</span><b>800 CVE</b></li>
+              <li><span>Absolut</span><b>600 CVE</b></li>
+              <li><span>Smirnoff</span><b>500 CVE</b></li>
+              <li><span>Vodka Casa</span><b>400 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Gin">Gin</b></summary>
+            <ul class="dishes">
+              <li><span>Gordons Lemon</span><b>600 CVE</b></li>
+              <li><span>Bombay</span><b>600 CVE</b></li>
+              <li><span>Tanqueray</span><b>600 CVE</b></li>
+              <li><span>Gordons Rosé</span><b>600 CVE</b></li>
+              <li><span>Gordons</span><b>500 CVE</b></li>
+              <li><span>Hendricks</span></li>
+              <li><span>Bulldog</span><b>700 CVE</b></li>
+              <li><span>Beefeater</span><b>600 CVE</b></li>
+              <li><span>Beefeater 24</span><b>800 CVE</b></li>
+              <li><span>Gin Casa</span><b>400 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Tequila">Tequila</b></summary>
+            <ul class="dishes">
+              <li><span>Patron Reposado</span><b>1.300 CVE</b></li>
+              <li><span>Patron Silver</span><b>900 CVE</b></li>
+              <li><span>Patron Añejo</span><b>1.400 CVE</b></li>
+              <li><span>Jose Cuervo</span><b>500 CVE</b></li>
+              <li><span>Jose Cuervo Reposado</span><b>600 CVE</b></li>
+              <li><span>Tequila Casa</span><b>400 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Liqueurs">Licores</b></summary>
+            <ul class="dishes">
+              <li><span>Safari</span><b>500 CVE</b></li>
+              <li><span>Drambuie</span><b>700 CVE</b></li>
+              <li><span>Amarula</span><b>600 CVE</b></li>
+              <li><span>Amaretto</span><b>600 CVE</b></li>
+              <li><span>Beirão</span><b>500 CVE</b></li>
+              <li><span>Baileys</span><b>600 CVE</b></li>
+              <li><span>Grand Marnier</span><b>800 CVE</b></li>
+              <li><span>Cointreau</span><b>700 CVE</b></li>
+              <li><span>Kahlúa</span><b>600 CVE</b></li>
+              <li><span>Sambuca</span><b>500 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Cognac and Brandy">Conhaque · Brandy</b></summary>
+            <ul class="dishes">
+              <li><span>Courvoisier VSOP</span><b>800 CVE</b></li>
+              <li><span>Hennessy VS</span><b>700 CVE</b></li>
+              <li><span>Dusse</span><b>900 CVE</b></li>
+              <li><span>Martell</span><b>900 CVE</b></li>
+              <li><span>Rémy Martin VSOP</span><b>1.000 CVE</b></li>
+              <li><span>Rémy Martin Premier</span><b>1.200 CVE</b></li>
+              <li><span>Napoleon</span><b>450 CVE</b></li>
+              <li><span>Hennessy White</span><b>900 CVE</b></li>
+              <li><span>Brandy Casa</span><b>400 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Sangria">Sangria</b></summary>
+            <ul class="dishes">
+              <li><span>Tinto 2L</span><b>1.790 CVE</b></li>
+              <li><span>Branco 2L</span><b>1.790 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Wine by the Glass">Vinho a Copo</b></summary>
+            <ul class="dishes">
+              <li><span>Tinto</span><b>300 CVE</b></li>
+              <li><span>Tinto Premium</span><b>450 CVE</b></li>
+              <li><span>Branco</span><b>300 CVE</b></li>
+              <li><span>Branco Premium</span><b>450 CVE</b></li>
+              <li><span>Rosé</span><b>300 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="White Wine">Vinho Branco</b></summary>
+            <ul class="dishes">
+              <li><span>Duarte Durão</span><b>1.490 CVE</b></li>
+              <li><span>Chã Branco</span><b>2.800 CVE</b></li>
+              <li><span>Cabriz</span><b>1.990 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Rosé Wine">Vinho Rosé</b></summary>
+            <ul class="dishes">
+              <li><span>Mateus</span><b>1.790 CVE</b></li>
+              <li><span>Duarte Durão</span><b>1.490 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Green Wine">Vinho Verde</b></summary>
+            <ul class="dishes">
+              <li><span>Alvarinho</span><b>2.490 CVE</b></li>
+              <li><span>Casal Garcia</span><b>1.790 CVE</b></li>
+              <li><span>Casal Garcia Sweet</span><b>1.790 CVE</b></li>
+              <li><span>Gazela</span><b>1.790 CVE</b></li>
+              <li><span>Luz Loureiro</span><b>1.790 CVE</b></li>
+              <li><span>Luz Verde</span><b>1.790 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Red Wine">Vinho Tinto</b></summary>
+            <ul class="dishes">
+              <li><span>Chã Tinto</span><b>2.800 CVE</b></li>
+              <li><span>Segredos São Miguel</span><b>1.490 CVE</b></li>
+              <li><span>Saramago</span><b>1.790 CVE</b></li>
+              <li><span>Saramago Reserva</span><b>2.490 CVE</b></li>
+              <li><span>Duarte Durão Reserva 2017</span><b>2.490 CVE</b></li>
+              <li><span>Cartuxa</span></li>
+              <li><span>Ea Cartuxa</span><b>2.790 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Sparkling Wine">Espumantes</b></summary>
+            <ul class="dishes">
+              <li><span>Corte Real</span><b>1.500 CVE</b></li>
+              <li><span>Raposeira Reserva</span><b>2.490 CVE</b></li>
+              <li><span>Gancia Asti</span><b>2.900 CVE</b></li>
+            </ul>
+          </details>
+          <details class="grp" name="menu">
+            <summary><b data-en="Champagne">Champanhe</b></summary>
+            <ul class="dishes">
+              <li><span>Laurent Perrier</span><b>12.000 CVE</b></li>
+              <li><span>Moët &amp; Chandon Imperial Brut</span><b>12.900 CVE</b></li>
+              <li><span>Moët &amp; Chandon Ice</span><b>16.800 CVE</b></li>
+              <li><span>Moët &amp; Chandon Imperial Rosé</span><b>16.900 CVE</b></li>
+              <li><span>Moët &amp; Chandon Imperial Rosé Ice</span><b>17.900 CVE</b></li>
+              <li><span>Chandon Spritz</span><b>5.900 CVE</b></li>
+              <li><span>Veuve Clicquot Rosé</span><b>14.900 CVE</b></li>
+              <li><span>Veuve Clicquot Yellow</span><b>14.900 CVE</b></li>
+              <li><span>Mumm Brut</span><b>11.900 CVE</b></li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== OPINIÕES: 1 citação grande + 2 pequenas ===== -->
+    <section id="opinioes">
+      <div class="wrap">
+        <h2 data-en="What people say about us">O que dizem de nós</h2>
+        <div class="quotes">
+          <blockquote>
+            <p>"Tivemos uma experiência maravilhosa do início ao fim. A carne estava absolutamente
+              deliciosa—perfeitamente cozida, macia e cheia de sabor. O atendimento foi amigável, atencioso e
+              profissional, o que tornou a noite ainda mais agradável. A atmosfera também era excelente. Definitivamente
+              um lugar que vale a pena visitar!"</p><cite>Joe M. <span aria-label="5 estrelas">★★★★★</span></cite>
+          </blockquote>
+          <blockquote>
+            <p>"Comida muito boa, a melhor que tive em Praia. Atendimento excelente e muito acolhedor"</p><cite>Obi O.
+              <span aria-label="5 estrelas">★★★★★</span></cite>
+          </blockquote>
+          <blockquote>
+            <p>"Adorei este wrap de badejo. Muito bom!"</p><cite>Semedo M. <span
+                aria-label="5 estrelas">★★★★★</span></cite>
+          </blockquote>
+        </div>
+        <a class="btn dark" data-link="reviews" href="#" data-en="See more reviews">Ver mais avaliações</a>
+      </div>
+    </section>
+
+    <!-- ===== DESTAQUE / CONTACTO: faixa de cor com texto grande ===== -->
+    <section class="highlight" id="contacto">
+      <div class="wrap">
+        <div class="big">10:00–00:00</div>
+        <h2 data-en="Come visit">Vem conhecer</h2>
+        <p data-en="Open daily · Praia Shopping, Praia 7600">Aberto diariamente · Praia Shopping, Praia 7600</p>
+        <p data-en="500-1000 CVE per person">500-1000 CVE por pessoa</p>
+        <div class="cta-contact">
+          <a class="btn dark" data-link="maps" href="#" data-en="See on Google Maps">Ver no Google Maps</a>
+          <a class="btn ghost" data-link="whatsapp" href="#" data-en="Talk on WhatsApp">Falar no WhatsApp</a>
+        </div>
+        <div class="map-wrap">
+          <iframe
+            src="https://maps.google.com/maps?q=14.9036211,-23.5200908+(TOURO)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+            loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+            title="Localização do TOURO no Google Maps">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer>
+    <div class="f-top">
+      <a href="#inicio" class="brand" aria-label="Touro Steakhouse">
+        <span class="brand-logo still" data-logo role="img" aria-label="Logo Touro"></span>
+        <span class="brand-text">TOURO</span>
+      </a>
+      <nav class="f-links" aria-label="Rodapé">
+        <a href="#inicio" data-en="Home">Início</a>
+        <a href="#sobre" data-en="About">Sobre</a>
+        <a href="#catalogo" data-en="Menu">Menu</a>
+        <a href="#opinioes" data-en="Reviews">Opiniões</a>
+        <a href="#contacto" data-en="Contact">Contacto</a>
+      </nav>
+      <span class="soc">
+        <a data-link="facebook" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z" />
+          </svg></a>
+        <a data-link="instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+          </svg></a>
+        <a data-link="whatsapp" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linejoin="round">
+            <path d="M12 3a9 9 0 1 0 4.6 16.7L21 21l-1.3-4.4A9 9 0 0 0 12 3z" />
+            <path d="M9 8c0 4 3 7 7 7l1-2-2-1-1 1c-1-.4-2.2-1.6-2.6-2.6l1-1z" fill="currentColor" stroke="none" />
+          </svg></a>
+      </span>
+    </div>
+    <hr class="f-line">
+    <div class="f-bottom">
+      <p class="f-copy">© <span id="year">2026</span> Touro · Praia, Cabo Verde. <span
+          data-en="All rights reserved.">Todos os direitos reservados.</span></p>
+      <a class="f-author" href="https://www.linkedin.com/in/stiven-dias-3674723b4/?isSelfProfile=true" target="_blank" rel="noopener">Made by Stiven Dias</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
