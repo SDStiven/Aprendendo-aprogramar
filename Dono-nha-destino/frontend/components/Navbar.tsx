@@ -10,7 +10,7 @@ const links = [
   { label: "Sobre Nós", href: "/#" },
   { label: "Que fazemos", href: "/#" },
   { label: "Impacto", href: "/#" },
-  { label: "Notícias e Eventos", href: "/#", active: true },
+  { label: "Notícias e Eventos", href: "/noticias", active: true },
   { label: "Formações", href: "/#" },
   { label: "Contactos", href: "/#" },
 ];

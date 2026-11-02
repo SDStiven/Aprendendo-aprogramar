@@ -12,6 +12,7 @@ export default function Noticias() {
             <Suspense fallback={<div>A carregar...</div>}>
             <DestackNoticias />
             <CardsNoticias/>
+            {/* <BoletimInformativo/> */}
             </Suspense>
              
             </main>

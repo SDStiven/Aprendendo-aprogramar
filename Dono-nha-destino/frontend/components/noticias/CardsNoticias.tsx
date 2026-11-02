@@ -9,14 +9,18 @@ interface Noticia {
   fonte: string;
   categoria: string;
   publishedAt: string;
+  capa: any;
+ 
 }
 
 interface ApiResponse {
   data: Noticia[];
 }
+const url = process.env.link
 
 async function getNoticias(): Promise<ApiResponse> {
-  const res = await fetch('http://localhost:1337/api/noticias', {
+ try {
+   const res = await fetch(`${url}/api/noticias?populate=capa`, {
     next: { revalidate: 60 },
   });
 
@@ -25,6 +29,10 @@ async function getNoticias(): Promise<ApiResponse> {
   }
 
   return res.json();
+  } catch (error) {
+    console.error('Falha de conexão com a API:', error);
+    return { data: [] };
+  }
 }
 
 export default async function CardsNoticias() {
@@ -54,16 +62,8 @@ export default async function CardsNoticias() {
         <p className="text-gray-500">Nenhuma notícia encontrada.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {ultimasNoticias.map((noticia, index) => {
-            // Imagens de exemplo para preencher os 6 cards (pode ajustar conforme a sua API)
-            const imagensExemplo = [
-              "/images/noticias/trafico de pessoas protocolo.jpeg",
-              "/images/noticias/trafico de pessoas protocolo.jpeg",
-              "/images/noticias/trafico de pessoas protocolo.jpeg",
-              "/images/noticias/trafico de pessoas protocolo.jpeg",
-              "/images/noticias/trafico de pessoas protocolo.jpeg",
-              "/images/noticias/trafico de pessoas protocolo.jpeg",
-            ];
+          {ultimasNoticias.map((noticia,) => {
+         
 
             return (
               <article 
@@ -74,7 +74,8 @@ export default async function CardsNoticias() {
                   <div className="relative h-48 w-full overflow-hidden bg-gray-100">
                     <img 
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      src={imagensExemplo[index % imagensExemplo.length]}
+                       src={`${url}${noticia.capa[0].url}`}
+
                       alt={noticia.titulo}
                     />
                     <div className="absolute top-3 left-3">

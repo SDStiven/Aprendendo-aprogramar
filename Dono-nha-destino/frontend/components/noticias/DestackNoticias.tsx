@@ -9,22 +9,28 @@ interface Noticia {
   fonte: string;
   categoria: string;
   publishedAt: string;
+  capa: any
 }
 
 interface ApiResponse {
   data: Noticia[];
 }
 
+const url = process.env.link
+
 async function getNoticias(): Promise<ApiResponse> {
-  const res = await fetch('http://localhost:1337/api/noticias', {
-    next: { revalidate: 60 },
-  });
+  try {
+    const res = await fetch(`${url}/api/noticias?populate=capa`);
 
   if (!res.ok) {
     throw new Error('Falha ao carregar as notícias');
   }
 
   return res.json();
+  } catch (error) {
+    console.error('Falha de conexão com a API:', error);
+    return { data: [] };
+  }
 }
 
 export default async function DestackNoticias() {
@@ -41,7 +47,7 @@ export default async function DestackNoticias() {
           <div className="w-full lg:w-1/2 overflow-hidden rounded-xl border border-gray-200">
             <img 
               className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
-              src="/images/noticias/trafico de pessoas protocolo.jpeg"
+              src={`${url}${noticias[noticias.length -1]?.capa?.[0]?.url}`}
               alt="Notícia em destaque"
             />
           </div>
