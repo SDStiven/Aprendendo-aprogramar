@@ -23,6 +23,13 @@ const deniedTypes = [
   'application/x-mach-binary',
 ];
 
+interface NoticiaEntry {
+  id: number;
+  titolo: string;
+  fonte: string;
+}
+
+
 const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin => ({
   'users-permissions': {
     config: {
@@ -40,6 +47,12 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin =>
       },
     },
   },
+  meilisearch: {
+    config: {
+      host: env("MEILISEARCH_HOST"),
+      apiKey: env("MEILISEARCH_API_KEY"),
+    },
+  }
 });
 
 export default config;

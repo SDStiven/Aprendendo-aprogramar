@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "formations",
+  "info": {
+    "singularName": "formation",
+    "pluralName": "formations",
+    "displayName": "Formation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "imagem": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "destinatarios": {
+      "type": "string"
+    },
+    "requisitos": {
+      "type": "text"
+    },
+    "datas": {
+      "type": "string"
+    },
+    "horarios": {
+      "type": "string"
+    },
+    "local": {
+      "type": "string"
+    },
+    "vagas": {
+      "type": "string"
+    },
+    "estadoIscircao": {
+      "type": "boolean"
+    },
+    "certificado": {
+      "type": "boolean"
+    },
+    "telefone": {
+      "type": "biginteger"
+    }
+  }
+}

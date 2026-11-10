@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "percursos",
+  "info": {
+    "singularName": "percurso",
+    "pluralName": "percursos",
+    "displayName": "Percurso"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "tag": {
+      "type": "string"
+    }
+  }
+}
